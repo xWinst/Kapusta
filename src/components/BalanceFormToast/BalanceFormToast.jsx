@@ -13,7 +13,9 @@ const Toast = ({ onClose }) => {
         <p className={s.text}>
           Hello! To get started, enter the current balance of your account!
         </p>
-        <p className={s.textDown}>You can't spend money until you have it :)</p>
+        <p className={s.textDown}>
+          You can't spend money until you have it &#128521
+        </p>
       </div>
     </div>
   );
