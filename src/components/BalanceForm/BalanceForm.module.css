@@ -100,14 +100,36 @@
 }
 
 .ButtonEnabled {
+  /* /-------/ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 121px;
+  height: 40px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  border-bottom-right-radius: 22px;
+  border-top-right-radius: 22px;
   /* composes: ButtonBase; */
+
   color: var(--white-color);
   border: 2px solid var(--accent-color);
   background-color: var(--accent-color);
 }
 
 .ButtonDisabled {
+  /* /-------/ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 121px;
+  height: 40px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  border-bottom-right-radius: 22px;
+  border-top-right-radius: 22px;
   /* composes: ButtonBase; */
+
   color: var(--text-color-one);
   border: 2px solid var(--white-color);
   background-color: var(--bg-modal-two-colour);
