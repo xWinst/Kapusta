@@ -10,7 +10,7 @@ const LogOutModal = ({ text }) => {
       <div className={s.LogOutModal__group}>
         <span className={s.LogOutModal__text}>{text}</span>
         <button className={s.LogOutModal__btn} type="button">
-          Да
+          Да!
         </button>
         <button className={s.LogOutModal__btn} type="button">
           Нет
