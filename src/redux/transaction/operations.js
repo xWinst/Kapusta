@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../../components/BalanceForm/balanceApi';
+// import * as api from 'services/kapusta-api'; потом поменять если что на такое
 
 const addIncome = createAsyncThunk(
   'transaction/add-income',
