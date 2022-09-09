@@ -1,15 +1,31 @@
 @import 'modern-normalize/modern-normalize.css';
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --main-color: #000000;
+    --secondary-color: rgba(82, 85, 95, 0.7);
+    --accent-color: #ff751d;
+    --secondary-accent-color: #ffdac0;
+    --bg-color: #f2f5fc;
+    --secondary-bg-color: #f5f6fb;
+    --light-color: #52555f;
+
+    --negative-color: #e53935;
+    --positive-color: #407946;
+
+    --mobile: 480px;
+    --tablet: 758px;
+    --desktop: 1280px;
+
+    --shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
