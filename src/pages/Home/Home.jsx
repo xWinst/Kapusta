@@ -1,4 +1,4 @@
-import s from '../index.module.css';
+// import s from '../index.module.css';
 
 const Home = () => {
   return <div>Home</div>;
