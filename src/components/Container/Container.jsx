@@ -3,14 +3,14 @@ import s from './Container.module.css';
 // import backOneCabage from '../../images/backOneCabage.svg';
 
 export default function Container({ children, location }) {
-  const locationExample = '/loginNo';
+    const locationExample = '/login';
 
-  const containerClass =
-    locationExample === '/login' || locationExample === '/register'
-      ? s.containerLogedOut
-      : s.containerLogedIn;
+    const containerClass =
+        locationExample === '/login' || locationExample === '/register'
+            ? s.containerLogedOut
+            : s.containerLogedIn;
 
-  return <div className={containerClass}>{children}</div>;
+    return <div className={containerClass}>{children}</div>;
 }
 
 // Container.propTypes = {
