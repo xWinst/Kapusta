@@ -1,0 +1,36 @@
+.table {
+  width: 746px;
+  border-spacing: 0px;
+}
+
+.tableHead {
+  height: 38px;
+  background: #f5f6fb;
+  border: none;
+}
+
+.tableThFirst {
+  border-top-left-radius: 16px;
+}
+.tableThLast {
+  border-top-right-radius: 16px;
+}
+
+.balanceTableTr {
+  width: 746px;
+  max-height: 40px;
+}
+
+.balanceTabeTd {
+  border-top: 2px solid #f5f6fb;
+  border-bottom: 2px solid #f5f6fb;
+  text-align: center;
+}
+
+.balanceTabeTd:first-child {
+  border-left: 2px solid #f5f6fb;
+}
+
+.balanceTabeTd:last-child {
+  border-right: 2px solid #f5f6fb;
+}
