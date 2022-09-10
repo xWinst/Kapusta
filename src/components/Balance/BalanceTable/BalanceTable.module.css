@@ -1,0 +1,106 @@
+.tableHead {
+    height: 38px;
+    background: #f5f6fb;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tableThFirst {
+    border-top-left-radius: 16px;
+}
+
+.tableThLast {
+    border-top-right-radius: 16px;
+    padding-left: 20px;
+}
+
+.balanceTableTr {
+    width: 746px;
+    height: 38px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+
+    font-size: 12px;
+    line-height: 1.17;
+
+    letter-spacing: 0.04em;
+
+    color: var(--text-color-four);
+}
+
+.balanceTableTd {
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
+    height: 38px;
+}
+
+.balanceTableTd:first-child {
+    border-left: 2px solid #f5f6fb;
+}
+
+.balanceTableTd:last-child {
+    border-right: 2px solid #f5f6fb;
+}
+
+.btnDelete {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+
+    border: none;
+    background: none;
+    background-image: url(../../../images/delete.svg);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 250ms linear;
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+    background: var(--bg-modal-two-colour);
+    background-image: url(../../../images/delete.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.balanceTabeTdSpan {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+
+    letter-spacing: 0.04em;
+
+    color: var(--red-color);
+}
+
+@media screen and (max-width: 767px) {
+    .table {
+        display: none;
+        width: 746px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .table {
+        width: 624px;
+        border-spacing: 0px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .table {
+        width: 746px;
+
+        border-spacing: 0px;
+    }
+}

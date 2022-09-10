@@ -1,7 +1,7 @@
 // import s from '../index.module.css';
-
+import { BalanceIncomeModule } from 'components';
 const Income = () => {
-  return <div>Income</div>;
+    return <BalanceIncomeModule />;
 };
 
 export default Income;
