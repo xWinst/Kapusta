@@ -10,6 +10,8 @@ export default function LogInForm() {
         password: '',
     });
 
+    const navigate = useNavigate(); //Временно
+
     const dispatch = useDispatch();
 
     const handleChange = event => {
@@ -26,14 +28,13 @@ export default function LogInForm() {
     const onLoginHandle = () => {
         dispatch();
         resetForm();
+        navigate('expenses'); //Временно
     };
     const onRegisterHandle = () => {
         dispatch();
         resetForm();
     };
 
-
-    const navigate = useNavigate(); //Временно
     return (
         <form className={s.loginForm}>
             <p className={s.googleText}>
@@ -51,14 +52,12 @@ export default function LogInForm() {
                     className={s.formInput}
                     type="email"
                     name="email"
-
                     value={formFields.email}
                     onChange={handleChange}
                     title="Please enter valid email address, for example  'example@gmail.com'"
                     placeholder="your@email.com"
                     min-length="6"
                     required
-
                 />
             </label>
             <label className={s.formLabel}>
@@ -67,7 +66,6 @@ export default function LogInForm() {
                     className={s.formInput}
                     type="password"
                     name="password"
-
                     value={formFields.password}
                     onChange={handleChange}
                     title="Please enter your password. Minimum length 8 symbols"
@@ -77,19 +75,10 @@ export default function LogInForm() {
                 />
             </label>
             <div className={s.btnCont}>
-                <button
-                    //onClick={onLoginHandle}
-                    onClick={() => navigate('expenses')} //Временно
-                    className={s.formBtnOrange}
-                    type="button" //Временно
-                >
+                <button onClick={onLoginHandle} className={s.formBtnOrange}>
                     LOG IN
                 </button>
-                <button
-                    onClick={onRegisterHandle}
-                >
-                    REGISTRATION
-                </button>
+                <button onClick={onRegisterHandle}>REGISTRATION</button>
             </div>
         </form>
     );
