@@ -1,6 +1,6 @@
 import s from './LogOutModal.module.css';
 import PropTypes from 'prop-types';
-
+import Button from 'components/Button/Button';
 const LogOutModal = ({ text }) => {
   return (
     <div className={s.LogOutModal__container}>
@@ -9,12 +9,8 @@ const LogOutModal = ({ text }) => {
       </svg>
       <div className={s.LogOutModal__group}>
         <span className={s.LogOutModal__text}>{text}</span>
-        <button className={s.LogOutModal__btn} type="button">
-          Да!
-        </button>
-        <button className={s.LogOutModal__btn} type="button">
-          Нет
-        </button>
+      <Button type='button'title='Yes'/>
+      <Button type='button'title='No'/>
       </div>
     </div>
   );
