@@ -1,6 +1,6 @@
 @media screen and (max-width: 479px) {
     .containerLogedOut {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 100%;
         min-height: 100vh;
@@ -14,7 +14,7 @@
     }
 
     .containerLogedIn {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 100%;
         min-height: 100vh;
@@ -28,7 +28,7 @@
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
     .containerLogedOut {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 480px;
         min-height: 100vh;
@@ -42,7 +42,7 @@
     }
 
     .containerLogedIn {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 480px;
         min-height: 100vh;
@@ -56,7 +56,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
     .containerLogedOut {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 768px;
         min-height: 100vh;
@@ -71,7 +71,7 @@
     }
 
     .containerLogedIn {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 768px;
         min-height: 100vh;
@@ -86,7 +86,7 @@
 
 @media screen and (min-width: 1280px) {
     .containerLogedOut {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 1280px;
         min-height: 100vh;
@@ -101,7 +101,7 @@
     }
 
     .containerLogedIn {
-        position: relative;
+        /* position: relative; */
         margin: 0 auto;
         width: 1280px;
         min-height: 100vh;

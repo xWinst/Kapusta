@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'; //Временно
 import GoogleLogo from '../../images/googleLogo.svg';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 import s from './LogInForm.module.css';
 
 export default function LogInForm() {
@@ -12,7 +12,7 @@ export default function LogInForm() {
 
     const navigate = useNavigate(); //Временно
 
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -26,12 +26,12 @@ export default function LogInForm() {
     };
 
     const onLoginHandle = () => {
-        dispatch();
+        //dispatch();
         resetForm();
         navigate('expenses'); //Временно
     };
     const onRegisterHandle = () => {
-        dispatch();
+        // dispatch();
         resetForm();
     };
 
