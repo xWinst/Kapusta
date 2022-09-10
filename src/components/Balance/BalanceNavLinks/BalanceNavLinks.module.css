@@ -13,15 +13,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 138px;
-    height: 40px;
-
-    background-color: var(--active-tab-bg-color);
-    color: var(--zero-black-color);
-
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
 }
 
 .link:hover,
@@ -49,26 +40,46 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    width: 138px;
-    height: 40px;
-
-    background-color: var(--white-color);
-
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
+.linkDiv {
+    display: flex;
 }
 
 @media screen and (max-width: 767px) {
-    .linkDiv {
-        display: none;
-        /* display: flex; */
+    .link {
+        width: 158px;
+        height: 53px;
+
+        background: var(--bg-modal-two-colour);
+    }
+
+    .linkActive {
+        width: 158px;
+        height: 53px;
+        color: var(--white-color);
+        background: var(--accent-color);
     }
 }
 
 @media screen and (min-width: 768px) {
-    .linkDiv {
-        display: block;
-        display: flex;
+    .link {
+        width: 138px;
+        height: 40px;
+
+        background-color: var(--active-tab-bg-color);
+        color: var(--zero-black-color);
+
+        border-top-left-radius: 22px;
+        border-top-right-radius: 22px;
+    }
+    .linkActive {
+        width: 138px;
+        height: 40px;
+
+        background-color: var(--white-color);
+
+        border-top-left-radius: 22px;
+        border-top-right-radius: 22px;
     }
 }
