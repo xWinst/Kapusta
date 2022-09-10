@@ -1,8 +1,8 @@
 //import s from '../index.module.css';
-import { BalanceExpensesModule } from 'components';
+import { ExpensesModule } from 'modules';
 
 const Expenses = () => {
-    return <BalanceExpensesModule />;
+    return <ExpensesModule />;
 };
 
 export default Expenses;

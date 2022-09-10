@@ -9,7 +9,7 @@ export default function Table() {
                     <th className={s.tableThSecond}>DESCRIPTION</th>
                     <th className={s.tableThThird}>CATEGORY</th>
                     <th className={s.tableThFourth}>SUM</th>
-                    <th className={s.tableThLast}>{''}</th>
+                    <th className={s.tableThLast}></th>
                 </tr>
             </thead>
 
@@ -26,7 +26,7 @@ export default function Table() {
                         </span>
                     </td>
                     <td className={s.balanceTableTd}>
-                        <button className={s.btnDelete}></button>
+                        <button type="button" className={s.btnDelete}></button>
                     </td>
                 </tr>
                 <tr className={s.balanceTableTr}>

@@ -55,19 +55,47 @@
     background-repeat: no-repeat;
 }
 
+.goBackButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -110px;
+    border: none;
+    background-color: transparent;
+    transition: all 250ms linear;
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.goBackButton:hover,
+.goBackButton:focus {
+    background-color: var(--zero-black-color);
+}
+
+.divFlexCalendarAndArrow {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (max-width: 767px) {
     .labelData {
-        display: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: none;
     }
 }
 
 @media screen and (min-width: 768px) {
+    .goBackButton {
+        display: none;
+    }
     .form {
         display: flex;
         flex-wrap: wrap;

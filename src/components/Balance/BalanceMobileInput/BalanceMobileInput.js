@@ -1,19 +1,34 @@
 // import Calendar from 'components/Calendar/Calendar';
 import Button from 'components/Button/Button';
-import s from '../BalanceForm/BalanceForm.module.css';
+import s from '../BalanceMobileInput/BalanceMobileInput.module.css';
+import { useNavigate } from 'react-router-dom';
+import arrow from '../../../images/ArrowToGoBack.svg';
 
-export default function Form() {
+export default function BalanceMobileInput() {
+    const navigate = useNavigate();
+    const goBackButton = () => {
+        navigate(-1);
+    };
     return (
         <form className={s.form} name="signup_form">
-            <label className={s.labelData}>
-                <input
-                    className={s.formInputDate}
-                    type="date"
-                    min="1920-01-01"
-                    max="2020-01-01"
-                />
-            </label>
-            {/* <Calendar /> */}
+            <div className={s.divFlexCalendarAndArrow}>
+                <button
+                    className={s.goBackButton}
+                    type="button"
+                    onClick={goBackButton}
+                >
+                    <img src={arrow} alt="arrow" width={24} height={24}></img>
+                </button>
+                <label className={s.labelData}>
+                    <input
+                        className={s.formInputDate}
+                        type="date"
+                        min="1920-01-01"
+                        max="2020-01-01"
+                    />
+                </label>
+            </div>
+            {/* <Calendar dateHandle={() => {}} /> */}
             <label className={s.formLabelProductDescription}>
                 <input
                     className={s.formInputProductDescription}

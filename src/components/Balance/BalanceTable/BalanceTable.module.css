@@ -88,6 +88,9 @@
         display: none;
         width: 746px;
     }
+    .balanceTableTdModif {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) {

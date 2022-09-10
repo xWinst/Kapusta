@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { items } from './items';
 
-import s from '../BalanceFormsLink/BalanceFormsLink.module.css';
+import s from './BalanceNavLinks.module.css';
 
-export default function BalanceFormsLink() {
+export default function BalanceNavLinks() {
     const getLink = ({ isActive }) => {
         return !isActive ? s.link : s.linkActive;
     };
