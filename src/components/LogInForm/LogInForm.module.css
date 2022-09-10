@@ -9,21 +9,16 @@
     background-color: var(--white-color);
 }
 
-.googleText {
+.googleLogo {
     display: block;
-    text-align: center;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    padding: 0 10px;
-    margin-bottom: 16px;
 }
 
 .googleBtn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto 32px;
-    text-align: center;
+
     width: 122px;
     height: 40px;
     border-radius: 20px;
