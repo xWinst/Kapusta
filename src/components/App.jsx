@@ -1,14 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { SharedLayout, LogInForm } from 'components';
-import {
-    Home,
-    Expenses,
-    Income,
-    Reports,
-    PageNotFound,
-    BalanceInput,
-} from 'pages';
+import { Expenses, Income, Reports, PageNotFound, BalanceInput } from 'pages';
 
 export const App = () => {
     return (
