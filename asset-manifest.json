@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/Kapusta/static/css/main.1e893669.css",
-    "main.js": "/Kapusta/static/js/main.23374d63.js",
+    "main.css": "/Kapusta/static/css/main.c5b36ba0.css",
+    "main.js": "/Kapusta/static/js/main.27a48fc6.js",
     "static/media/bgBottomDesktop.svg": "/Kapusta/static/media/bgBottomDesktop.7d719bc3ecca6e327582.svg",
     "static/media/bgTopTablet.svg": "/Kapusta/static/media/bgTopTablet.d67fb0c23c0bc6595d41.svg",
     "static/media/backgTopCabages.svg": "/Kapusta/static/media/backgTopCabages.63133c5768fc553df8e0.svg",
     "static/media/backTwoCabages.svg": "/Kapusta/static/media/backTwoCabages.6a16094068293d8d4bb0.svg",
     "static/media/backOneCabage180.svg": "/Kapusta/static/media/backOneCabage180.e27a358eaecba61dab87.svg",
     "static/media/backOneCabage.svg": "/Kapusta/static/media/backOneCabage.ddd57962cba897f938cc.svg",
+    "static/media/calculator.svg": "/Kapusta/static/media/calculator.548cfa77d066c8000a12.svg",
+    "static/media/delete.svg": "/Kapusta/static/media/delete.6810a8c2564074c62673.svg",
     "static/media/icons.svg": "/Kapusta/static/media/icons.c302a86abba23f6af6bb0ad003b453a9.svg",
     "index.html": "/Kapusta/index.html",
     "static/media/bgDesktop.svg": "/Kapusta/static/media/bgDesktop.0a899f31f56fe9101b83.svg",
     "static/media/bgMobile.svg": "/Kapusta/static/media/bgMobile.84443502bb1029840078.svg",
     "static/media/bgTablet.svg": "/Kapusta/static/media/bgTablet.5829b22a4c0acc81fda5.svg",
-    "main.1e893669.css.map": "/Kapusta/static/css/main.1e893669.css.map",
-    "main.23374d63.js.map": "/Kapusta/static/js/main.23374d63.js.map"
+    "main.c5b36ba0.css.map": "/Kapusta/static/css/main.c5b36ba0.css.map",
+    "main.27a48fc6.js.map": "/Kapusta/static/js/main.27a48fc6.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e893669.css",
-    "static/js/main.23374d63.js"
+    "static/css/main.c5b36ba0.css",
+    "static/js/main.27a48fc6.js"
   ]
 }
