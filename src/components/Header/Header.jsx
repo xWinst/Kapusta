@@ -1,16 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import KapustaLogo from '../../images/logo.svg';
+import UserMenu from 'components/UserMenu/UserMenu';
 import s from './Header.module.css';
 
-const Header = () => {
-  return (
-    <div className={s.container}>
-      Header Header
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="expenses">expenses</NavLink>
-      <NavLink to="income">income</NavLink>
-      <NavLink to="reports">reports</NavLink>
-    </div>
-  );
-};
-
-export default Header;
+export default function Header() {
+    return (
+        <header className={s.headerBar}>
+            <img
+                className={s.logo}
+                src={KapustaLogo}
+                alt="Kapusta-logo"
+                height="31"
+                width="90"
+            />
+            <UserMenu />
+        </header>
+    );
+}

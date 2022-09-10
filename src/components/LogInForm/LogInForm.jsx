@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'; //Временно
 import GoogleLogo from '../../images/googleLogo.svg';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -31,6 +32,8 @@ export default function LogInForm() {
         resetForm();
     };
 
+
+    const navigate = useNavigate(); //Временно
     return (
         <form className={s.loginForm}>
             <p className={s.googleText}>
@@ -48,12 +51,14 @@ export default function LogInForm() {
                     className={s.formInput}
                     type="email"
                     name="email"
+
                     value={formFields.email}
                     onChange={handleChange}
                     title="Please enter valid email address, for example  'example@gmail.com'"
                     placeholder="your@email.com"
                     min-length="6"
                     required
+
                 />
             </label>
             <label className={s.formLabel}>
@@ -62,6 +67,7 @@ export default function LogInForm() {
                     className={s.formInput}
                     type="password"
                     name="password"
+
                     value={formFields.password}
                     onChange={handleChange}
                     title="Please enter your password. Minimum length 8 symbols"
@@ -72,16 +78,15 @@ export default function LogInForm() {
             </label>
             <div className={s.btnCont}>
                 <button
-                    onClick={onLoginHandle}
+                    //onClick={onLoginHandle}
+                    onClick={() => navigate('expenses')} //Временно
                     className={s.formBtnOrange}
-                    type="button"
+                    type="button" //Временно
                 >
                     LOG IN
                 </button>
                 <button
                     onClick={onRegisterHandle}
-                    className={s.formBtn}
-                    type="button"
                 >
                     REGISTRATION
                 </button>
