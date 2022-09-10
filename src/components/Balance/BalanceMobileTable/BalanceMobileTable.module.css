@@ -6,8 +6,14 @@
 
     justify-content: space-between;
 }
+.tableContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+}
 
-.MobileTableDiv {
+.mobileTableDiv {
     margin-bottom: 12px;
 }
 
@@ -90,7 +96,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .MobileTableDiv {
+    .mobileTableDiv {
         display: none;
     }
 }

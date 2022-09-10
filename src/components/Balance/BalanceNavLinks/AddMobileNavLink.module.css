@@ -19,14 +19,16 @@
     width: 158px;
     height: 53px;
 
-    background-color: var(--unaccent-pictogram-color);
-    color: var(--white-color);
+    background-color: var(--bg-modal-two-colour);
+    color: var(--zero-black-color);
+    border: 1px solid var(--zero-black-color);
 }
 
 .link:hover,
 .link:focus {
-    color: var(--accent-color);
-    background-color: var(--modal-nonaccent-text-color);
+    color: var(--white-color);
+    background-color: var(--accent-color);
+    border: none;
 }
 
 .linkActive {

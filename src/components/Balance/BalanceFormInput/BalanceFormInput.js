@@ -1,4 +1,4 @@
-// import Calendar from 'components/Calendar/Calendar';
+import Calendar from 'components/Calendar/Calendar';
 import Button from 'components/Button/Button';
 
 import s from '../BalanceFormInput/BalanceFormInput.module.css';
@@ -12,7 +12,6 @@ export default function BalanceFormInput() {
     };
     return (
         <>
-            {' '}
             <form className={s.form} name="signup_form">
                 <div className={s.divFlexCalendarAndArrow}>
                     <button
@@ -22,16 +21,16 @@ export default function BalanceFormInput() {
                     >
                         <img src={ss} alt="arrow" width={24} height={24}></img>
                     </button>
-                    <label className={s.labelData}>
+                    {/* <label className={s.labelData}>
                         <input
                             className={s.formInputDate}
                             type="date"
                             min="1920-01-01"
                             max="2020-01-01"
                         />
-                    </label>
+                    </label> */}
                 </div>
-                {/* <Calendar dateHandle={() => {}} /> */}
+                <Calendar dateHandle={() => {}} />
                 <label className={s.formLabelProductDescription}>
                     <input
                         className={s.formInputProductDescription}

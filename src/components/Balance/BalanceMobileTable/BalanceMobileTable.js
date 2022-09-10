@@ -2,8 +2,8 @@ import s from '../BalanceMobileTable/BalanceMobileTable.module.css';
 
 export default function BalanceMobileTable() {
     return (
-        <>
-            <div className={s.MobileTableDiv}>
+        <div className={s.tableContainer}>
+            <div className={s.mobileTableDiv}>
                 <h2 className={s.title}>Метро</h2>
                 <ul className={s.list}>
                     <div className={s.textFlex}>
@@ -16,7 +16,7 @@ export default function BalanceMobileTable() {
                     </div>
                 </ul>
             </div>
-            <div className={s.MobileTableDiv}>
+            <div className={s.mobileTableDiv}>
                 <h2 className={s.title}>Метро</h2>
                 <ul className={s.list}>
                     <div className={s.textFlex}>
@@ -29,7 +29,7 @@ export default function BalanceMobileTable() {
                     </div>
                 </ul>
             </div>
-            <div className={s.MobileTableDiv}>
+            <div className={s.mobileTableDiv}>
                 <h2 className={s.title}>Метро</h2>
                 <ul className={s.list}>
                     <div className={s.textFlex}>
@@ -42,7 +42,7 @@ export default function BalanceMobileTable() {
                     </div>
                 </ul>
             </div>
-            <div className={s.MobileTableDiv}>
+            <div className={s.mobileTableDiv}>
                 <h2 className={s.title}>Метро</h2>
                 <ul className={s.list}>
                     <div className={s.textFlex}>
@@ -55,6 +55,6 @@ export default function BalanceMobileTable() {
                     </div>
                 </ul>
             </div>
-        </>
+        </div>
     );
 }

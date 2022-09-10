@@ -91,6 +91,12 @@
     .balanceTableTdModif {
         display: none;
     }
+
+    .tableContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -98,12 +104,15 @@
         width: 624px;
         border-spacing: 0px;
     }
+
+    .tableContainer {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1280px) {
     .table {
         width: 746px;
-
         border-spacing: 0px;
     }
 }
