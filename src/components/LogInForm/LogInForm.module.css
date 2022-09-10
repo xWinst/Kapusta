@@ -6,24 +6,18 @@
     box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
     border-radius: 30px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: var(--white-color);
 }
 
-.googleText {
+.googleLogo {
     display: block;
-    text-align: center;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    padding: 0 10px;
-    margin-bottom: 16px;
 }
 
 .googleBtn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto 32px;
-    text-align: center;
     width: 122px;
     height: 40px;
     border-radius: 20px;
@@ -56,7 +50,7 @@
     height: 52px;
     border: none;
     border-radius: 26px;
-    background-color: #f6f7fb;
+    background-color: var(--form-bg-text-color);
     margin-top: 12px;
 }
 .formInput::placeholder {
@@ -65,7 +59,7 @@
     line-height: 16px;
     letter-spacing: 0.04em;
     padding-left: 19px;
-    color: #a6abb9;
+    color: var(--text-color-three);
 }
 .btnCont {
     margin-top: 40px;
@@ -77,7 +71,7 @@
     height: 44px;
     width: 116px;
     border-radius: 16px;
-    background-color: #f5f6fb;
+    background-color: var(--user-pictogram-bg-color);
     border: none;
     filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
     font-weight: 700;
@@ -87,14 +81,14 @@
     text-transform: uppercase;
     text-align: center;
     padding: auto;
-    color: #52555f;
+    color: var(--text-color-four);
     cursor: pointer;
 }
 
 .formBtnOrange {
     composes: formBtn;
-    color: white;
-    background-color: #ff751d;
+    color: var(--white-color);
+    background-color: var(--accent-color);
 }
 
 @media screen and (min-width: 480px) {

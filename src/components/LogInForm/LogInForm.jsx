@@ -1,7 +1,38 @@
 import { useNavigate } from 'react-router-dom'; //Временно
 import GoogleLogo from '../../images/googleLogo.svg';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import s from './LogInForm.module.css';
+
 export default function LogInForm() {
+    const [formFields, setFormFields] = useState({
+        email: '',
+        password: '',
+    });
+
+    const dispatch = useDispatch();
+
+    const handleChange = event => {
+        const { name, value } = event.currentTarget;
+        setFormFields(prevState => ({ ...prevState, [name]: value }));
+    };
+    const resetForm = () => {
+        setFormFields({
+            email: '',
+            password: '',
+        });
+    };
+
+    const onLoginHandle = () => {
+        dispatch();
+        resetForm();
+    };
+    const onRegisterHandle = () => {
+        dispatch();
+        resetForm();
+    };
+
+
     const navigate = useNavigate(); //Временно
     return (
         <form className={s.loginForm}>
@@ -20,12 +51,14 @@ export default function LogInForm() {
                     className={s.formInput}
                     type="email"
                     name="email"
-                    value=""
-                    onChange={() => {}}
+
+                    value={formFields.email}
+                    onChange={handleChange}
                     title="Please enter valid email address, for example  'example@gmail.com'"
                     placeholder="your@email.com"
                     min-length="6"
-                    // required  //Временно
+                    required
+
                 />
             </label>
             <label className={s.formLabel}>
@@ -34,23 +67,27 @@ export default function LogInForm() {
                     className={s.formInput}
                     type="password"
                     name="password"
-                    value=""
-                    onChange={() => {}}
+
+                    value={formFields.password}
+                    onChange={handleChange}
                     title="Please enter your password. Minimum length 8 symbols"
                     placeholder="Password"
                     min-length="8"
-                    // required   //Временно
+                    required
                 />
             </label>
             <div className={s.btnCont}>
                 <button
+                    //onClick={onLoginHandle}
+                    onClick={() => navigate('expenses')} //Временно
                     className={s.formBtnOrange}
                     type="button" //Временно
-                    onClick={() => navigate('expenses')} //Временно
                 >
                     LOG IN
                 </button>
-                <button className={s.formBtn} type="submit">
+                <button
+                    onClick={onRegisterHandle}
+                >
                     REGISTRATION
                 </button>
             </div>
