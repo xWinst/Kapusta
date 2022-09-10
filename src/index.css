@@ -21,6 +21,8 @@
     --form-bg-text-color: #f6f7fb;
     --user-pictogram-bg-color: #f5f6fa;
     --header-vertical-line-bg-color: #e0e5eb;
+    --zero-black-color: #000000;
+    --red-color: #e7192e;
 
     --modal-comment-bg: linear-gradient(
         117.84deg,
@@ -46,30 +48,34 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.link {
-    color: inherit;
-    text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    padding: 0;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
