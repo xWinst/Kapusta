@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Kapusta/static/css/main.682bdd8e.css",
+    "main.css": "/Kapusta/static/css/main.04d9c434.css",
     "main.js": "/Kapusta/static/js/main.69d5c3ee.js",
     "static/media/bgBottomDesktop.svg": "/Kapusta/static/media/bgBottomDesktop.7d719bc3ecca6e327582.svg",
     "static/media/bgTopTablet.svg": "/Kapusta/static/media/bgTopTablet.d67fb0c23c0bc6595d41.svg",
@@ -19,11 +19,11 @@
     "static/media/bgMobile.svg": "/Kapusta/static/media/bgMobile.84443502bb1029840078.svg",
     "static/media/bgTablet.svg": "/Kapusta/static/media/bgTablet.5829b22a4c0acc81fda5.svg",
     "static/media/ArrowToGoBack.svg": "/Kapusta/static/media/ArrowToGoBack.17c466509198738a4cac8f3d82296e85.svg",
-    "main.682bdd8e.css.map": "/Kapusta/static/css/main.682bdd8e.css.map",
+    "main.04d9c434.css.map": "/Kapusta/static/css/main.04d9c434.css.map",
     "main.69d5c3ee.js.map": "/Kapusta/static/js/main.69d5c3ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.682bdd8e.css",
+    "static/css/main.04d9c434.css",
     "static/js/main.69d5c3ee.js"
   ]
 }
