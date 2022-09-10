@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5f6fa;
+  background-color: var(--user-pictogram-bg-color);
   width: 32px;
   height: 32px;
   margin-right: 12px;
@@ -18,7 +18,7 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 14px;
-  color: #52555f;
+  color: var(--text-color-four);
 }
 
 .userName__full {
@@ -26,27 +26,27 @@
   font-size: 12px;
   letter-spacing: 0.04em;
   line-height: 1.17;
-  color: #52555f;
+  color: var(--text-color-four);
   margin-right: 20px;
 }
 
 .btnExitMob {
-  background-color: #fff;
+  background-color: var(--white-color);
   border: none;
   cursor: pointer;
 }
 
 .btnExit {
-  background-color: #fff;
+  background-color: var(--white-color);
   border: none;
-  border-left: 1px solid #e0e5eb;
+  border-left: 1px solid var(--header-verical-line-bg-color);
   font-weight: 400;
   height: 36px;
   font-size: 12px;
   line-height: 1.17;
   padding-left: 20px;
   text-decoration-line: underline;
-  color: #52555f;
+  color: var(--text-color-four);
   cursor: pointer;
 }
 
@@ -59,7 +59,7 @@
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: var(--mobile)) {
   .btnExitMob {
     display: none;
   }

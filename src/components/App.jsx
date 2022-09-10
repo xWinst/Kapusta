@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout } from 'components';
+
+import { SharedLayout, LogInForm } from 'components';
 import {
     Home,
     Expenses,
@@ -13,7 +14,7 @@ export const App = () => {
     return (
         <Routes>
             <Route path="/" element={<SharedLayout />}>
-                <Route index element={<Home />} />
+                <Route index element={<LogInForm />} />
                 <Route path="expenses" element={<Expenses />} />
                 <Route path="income" element={<Income />} />
                 <Route path="reports" element={<Reports />} />
