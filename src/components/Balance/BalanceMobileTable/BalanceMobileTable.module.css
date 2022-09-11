@@ -1,11 +1,3 @@
-.list {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--bg-modal-two-colour);
-    width: 282px;
-
-    justify-content: space-between;
-}
 .tableContainer {
     display: flex;
     align-items: center;
@@ -15,10 +7,6 @@
 
 .mobileTableDiv {
     margin-bottom: 12px;
-}
-
-.text:first-child {
-    margin-right: 20px;
 }
 
 .title {
@@ -33,7 +21,20 @@
     color: var(--text-color-four);
 }
 
-.text {
+.list {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--bg-modal-two-colour);
+    width: 282px;
+
+    justify-content: space-between;
+}
+
+.divTextFlex {
+    display: flex;
+}
+
+.divTextFlex__text {
     font-size: 12px;
     line-height: 1.12;
     letter-spacing: 0.04em;
@@ -41,7 +42,17 @@
     color: var(--text-color-four);
 }
 
-.textNumber {
+.divTextFlex__text:first-child {
+    margin-right: 20px;
+}
+
+.divSumAndButtonFlex {
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.divSumAndButtonFlex__sum {
     font-weight: 700;
     font-size: 12px;
     line-height: 1.17;
@@ -52,6 +63,7 @@
 
     margin-right: 20px;
 }
+
 .btnDelete {
     width: 28px;
     height: 28px;
@@ -74,18 +86,8 @@
     background-repeat: no-repeat;
 }
 
-.flex {
-    padding-bottom: 12px;
-    display: flex;
-    align-items: center;
-}
-
-.textFlex {
-    display: flex;
-}
-
 @media screen and (min-width: 768px) {
-    .mobileTableDiv {
+    .tableContainer {
         display: none;
     }
 }

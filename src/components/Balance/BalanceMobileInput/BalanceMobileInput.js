@@ -1,7 +1,7 @@
 import Calendar from 'components/Calendar/Calendar';
 import Button from 'components/Button/Button';
-import s from '../BalanceMobileInput/BalanceMobileInput.module.css';
 import { useNavigate } from 'react-router-dom';
+import s from '../BalanceMobileInput/BalanceMobileInput.module.css';
 import arrow from '../../../images/ArrowToGoBack.svg';
 
 export default function BalanceMobileInput() {
