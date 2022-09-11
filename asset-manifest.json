@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Kapusta/static/css/main.b828f3d6.css",
-    "main.js": "/Kapusta/static/js/main.8f8fed24.js",
+    "main.css": "/Kapusta/static/css/main.26bf81c8.css",
+    "main.js": "/Kapusta/static/js/main.8778e8e9.js",
     "static/media/sprite.svg": "/Kapusta/static/media/sprite.c9547f3469cf89990739a30a5beed708.svg",
     "static/media/bgBottomDesktop.svg": "/Kapusta/static/media/bgBottomDesktop.7d719bc3ecca6e327582.svg",
     "static/media/bgTopTablet.svg": "/Kapusta/static/media/bgTopTablet.d67fb0c23c0bc6595d41.svg",
@@ -12,6 +12,7 @@
     "static/media/backOneCabage.svg": "/Kapusta/static/media/backOneCabage.ddd57962cba897f938cc.svg",
     "static/media/logo.svg": "/Kapusta/static/media/logo.9a1219fa7b0c5ccef923ebbd77f9ee7b.svg",
     "static/media/calendarNew.svg": "/Kapusta/static/media/calendarNew.fcea09cc92ad5bc80f06cc6eef6d3cb9.svg",
+    "static/media/union.svg": "/Kapusta/static/media/union.714abfed651ac9bb7511c49d7c27e4e9.svg",
     "static/media/calculator.svg": "/Kapusta/static/media/calculator.548cfa77d066c8000a12.svg",
     "static/media/delete.svg": "/Kapusta/static/media/delete.6810a8c2564074c62673.svg",
     "static/media/icons.svg": "/Kapusta/static/media/icons.c302a86abba23f6af6bb0ad003b453a9.svg",
@@ -22,11 +23,11 @@
     "static/media/bgTablet.svg": "/Kapusta/static/media/bgTablet.5829b22a4c0acc81fda5.svg",
     "static/media/ArrowToGoBack.svg": "/Kapusta/static/media/ArrowToGoBack.17c466509198738a4cac8f3d82296e85.svg",
     "static/media/close.svg": "/Kapusta/static/media/close.1910b6c007012ffe6cd5a46baf11e3dc.svg",
-    "main.b828f3d6.css.map": "/Kapusta/static/css/main.b828f3d6.css.map",
-    "main.8f8fed24.js.map": "/Kapusta/static/js/main.8f8fed24.js.map"
+    "main.26bf81c8.css.map": "/Kapusta/static/css/main.26bf81c8.css.map",
+    "main.8778e8e9.js.map": "/Kapusta/static/js/main.8778e8e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.b828f3d6.css",
-    "static/js/main.8f8fed24.js"
+    "static/css/main.26bf81c8.css",
+    "static/js/main.8778e8e9.js"
   ]
 }
