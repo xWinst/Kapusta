@@ -10,3 +10,4 @@ export { default as BalanceSummary } from '../components/Balance/BalanceSummary/
 export { default as BalanceTable } from '../components/Balance/BalanceTable/BalanceTable';
 export { default as BalanceFormInput } from '../components/Balance/BalanceFormInput/BalanceFormInput';
 export { default as LogInForm } from './LogInForm/LogInForm';
+export { default as BalanceForm } from './BalanceForm/BalanceForm';

@@ -1,6 +1,12 @@
 import { IncomeModule } from 'modules';
+import { BalanceForm } from 'components';
 const Income = () => {
-    return <IncomeModule />;
+    return (
+        <>
+            <BalanceForm />
+            <IncomeModule />;
+        </>
+    );
 };
 
 export default Income;

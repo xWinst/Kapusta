@@ -3,6 +3,8 @@ import s from './BalanceForm.module.css';
 import Toast from 'components/BalanceFormToast/BalanceFormToast';
 
 const BalanceForm = () => {
+    const isModalShow = false;
+
     return (
         <div className={s.Container}>
             <p className={s.Title}>Balance:</p>
@@ -31,7 +33,7 @@ const BalanceForm = () => {
                 >
                     CONFIRM
                 </button>
-                <Toast onClose={() => {}} />
+                {isModalShow && <Toast onClose={() => {}} />}
                 {/* ------------------------ */}
                 {/* {isToastShown && (
         <Toast
