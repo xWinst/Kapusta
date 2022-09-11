@@ -1,3 +1,5 @@
+import s from '../index.module.css';
+import { Link } from 'react-router-dom';
 import { IncomeModule } from 'modules';
 import { BalanceForm } from 'components';
 const Income = () => {
