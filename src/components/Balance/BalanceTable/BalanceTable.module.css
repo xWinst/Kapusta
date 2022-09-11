@@ -1,50 +1,118 @@
+/*  */
+/* SCROLL TABLE */
+
+.scrollTable table {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.scrollTableBody {
+    height: 360px;
+    overflow-x: hidden;
+}
+
+.scrollTable ::-webkit-scrollbar {
+    width: 6px;
+    height: 130px;
+}
+.scrollTable ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.scrollTable ::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--accent-color);
+    border-radius: 5px;
+}
+
+/*  */
+/* TABLE HEAD */
+
 .tableHead {
-    height: 38px;
+    height: 40px;
     background: #f5f6fb;
     border: none;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
-.tableThFirst {
+.tableTheadEmpty {
     border-top-left-radius: 16px;
+    height: 40px;
 }
 
-.tableThLast {
+.tableTheadDate {
+    height: 40px;
+    text-align: start;
+}
+
+.tableTheadDescription {
+    height: 40px;
+    text-align: start;
+}
+
+.tableTheadCategory {
+    height: 40px;
+}
+
+.tableTheadSum {
+    height: 40px;
+}
+
+.tableTheadDelete {
     border-top-right-radius: 16px;
-    padding-left: 20px;
 }
 
-.balanceTableTr {
-    width: 746px;
-    height: 38px;
-    padding-left: 20px;
-    padding-right: 20px;
+/*  */
+/* TABLE BODY */
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-        sans-serif;
+.tableBodyTR {
+    height: 40px;
 
     font-size: 12px;
     line-height: 1.17;
-
     letter-spacing: 0.04em;
-
     color: var(--text-color-four);
 }
 
-.balanceTableTd {
-    border-bottom: 2px solid #f5f6fb;
-    text-align: center;
-    height: 38px;
-}
+.tableBodyEmpty {
+    height: 40px;
 
-.balanceTableTd:first-child {
+    border-bottom: 2px solid #f5f6fb;
     border-left: 2px solid #f5f6fb;
 }
 
-.balanceTableTd:last-child {
-    border-right: 2px solid #f5f6fb;
+.tableBodyDate {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: start;
+}
+
+.tableBodyDescription {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: start;
+}
+
+.tableBodyCategory {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
+}
+
+.tableBodySum {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: red;
+}
+
+.tableBodyDelete {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
 }
 
 .btnDelete {
@@ -63,47 +131,135 @@
 
 .btnDelete:hover,
 .btnDelete:focus {
-    background: var(--bg-modal-two-colour);
+    background: var(--accent-color);
     background-image: url(../../../images/delete.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.balanceTabeTdSpan {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-        sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1.17;
-
-    letter-spacing: 0.04em;
-
-    color: var(--red-color);
-}
+/*  */
+/* MEDIA RULES */
 
 @media screen and (max-width: 767px) {
-    .table {
-        display: none;
-        width: 746px;
-    }
-    .balanceTableTdModif {
+    .scrollTable {
         display: none;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .table {
+    .scrollTable {
         width: 624px;
-        border-spacing: 0px;
+    }
+
+    /* TABLE HEAD */
+    .tableTheadEmpty {
+        width: 20px;
+    }
+
+    .tableTheadDate {
+        width: 109px;
+    }
+
+    .tableTheadDescription {
+        width: 173px;
+    }
+
+    .tableTheadCategory {
+        width: 128px;
+    }
+
+    .tableTheadSum {
+        width: 108px;
+        text-align: end;
+    }
+
+    /* TABLE BODY */
+
+    .tableBodyTR {
+        width: 746px;
+    }
+
+    .tableBodyEmpty {
+        width: 20px;
+    }
+
+    .tableBodyDate {
+        width: 109px;
+    }
+
+    .tableBodyDescription {
+        min-width: 173px;
+    }
+
+    .tableBodyCategory {
+        min-width: 128px;
+    }
+
+    .tableBodySum {
+        min-width: 108px;
+        text-align: end;
+    }
+
+    .tableBodyDelete {
+        min-width: 83px;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .table {
+    .scrollTable {
         width: 746px;
+    }
 
-        border-spacing: 0px;
+    /* TABLE HEAD */
+    .tableTheadEmpty {
+        width: 28px;
+    }
+
+    .tableTheadDate {
+        width: 108px;
+    }
+
+    .tableTheadDescription {
+        width: 186px;
+    }
+
+    .tableTheadCategory {
+        width: 198px;
+    }
+
+    .tableTheadSum {
+        width: 109px;
+        text-align: center;
+    }
+
+    /* TABLE BODY */
+
+    .tableBodyTR {
+        width: 746px;
+    }
+
+    .tableBodyEmpty {
+        width: 28px;
+    }
+
+    .tableBodyDate {
+        width: 108px;
+    }
+
+    .tableBodyDescription {
+        width: 186px;
+    }
+
+    .tableBodyCategory {
+        width: 198px;
+    }
+
+    .tableBodySum {
+        width: 109px;
+        text-align: center;
+    }
+
+    .tableBodyDelete {
+        width: 117px;
     }
 }

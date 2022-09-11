@@ -1,25 +1,16 @@
-.list {
+.tableContainer {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--bg-modal-two-colour);
-    width: 282px;
-
-    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 60px;
 }
 
-.MobileTableDiv {
+.mobileTableDiv {
     margin-bottom: 12px;
-}
-
-.text:first-child {
-    margin-right: 20px;
 }
 
 .title {
     margin-bottom: -5px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-        sans-serif;
 
     font-weight: 700;
     font-size: 12px;
@@ -30,23 +21,38 @@
     color: var(--text-color-four);
 }
 
-.text {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-        sans-serif;
+.list {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--bg-modal-two-colour);
+    width: 282px;
 
-    font-size: 8px;
+    justify-content: space-between;
+}
+
+.divTextFlex {
+    display: flex;
+}
+
+.divTextFlex__text {
+    font-size: 12px;
     line-height: 1.12;
     letter-spacing: 0.04em;
 
     color: var(--text-color-four);
 }
 
-.textNumber {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-        sans-serif;
+.divTextFlex__text:first-child {
+    margin-right: 20px;
+}
 
+.divSumAndButtonFlex {
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.divSumAndButtonFlex__sum {
     font-weight: 700;
     font-size: 12px;
     line-height: 1.17;
@@ -57,9 +63,10 @@
 
     margin-right: 20px;
 }
+
 .btnDelete {
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
     border-radius: 50px;
 
     border: none;
@@ -73,24 +80,14 @@
 
 .btnDelete:hover,
 .btnDelete:focus {
-    background: var(--bg-modal-two-colour);
+    background: var(--accent-color);
     background-image: url(../../../images/delete.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.flex {
-    padding-bottom: 12px;
-    display: flex;
-    align-items: center;
-}
-
-.textFlex {
-    display: flex;
-}
-
 @media screen and (min-width: 768px) {
-    .MobileTableDiv {
+    .tableContainer {
         display: none;
     }
 }
