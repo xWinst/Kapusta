@@ -38,6 +38,10 @@
     background-color: transparent;
     border: none;
 }
+button.button {
+    background-color: transparent;
+    box-shadow: none;
+}
 .icon {
     stroke: var(--bg-modal-three-colour);
 }
