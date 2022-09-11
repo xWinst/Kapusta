@@ -13,6 +13,7 @@ export default function BalanceFormInput() {
     return (
         <>
             <form className={s.form} name="signup_form">
+                <Calendar dateHandle={() => {}} />
                 <div className={s.divFlexCalendarAndArrow}>
                     <button
                         className={s.goBackButton}
@@ -21,16 +22,8 @@ export default function BalanceFormInput() {
                     >
                         <img src={ss} alt="arrow" width={24} height={24}></img>
                     </button>
-                    {/* <label className={s.labelData}>
-                        <input
-                            className={s.formInputDate}
-                            type="date"
-                            min="1920-01-01"
-                            max="2020-01-01"
-                        />
-                    </label> */}
                 </div>
-                <Calendar dateHandle={() => {}} />
+
                 <label className={s.formLabelProductDescription}>
                     <input
                         className={s.formInputProductDescription}
@@ -41,14 +34,10 @@ export default function BalanceFormInput() {
                 </label>
 
                 <label>
-                    <input
-                        className={s.formInputProductCategory}
-                        list="datalist"
-                        name="fav"
-                        id="fav"
-                        placeholder="Product category"
-                    />
-                    <datalist id="datalist" name="size">
+                    <select className={s.formInputProductCategory}>
+                        <option disabled selected>
+                            Product category
+                        </option>
                         <option>Transport</option>
                         <option>Products</option>
                         <option>Health</option>
@@ -60,8 +49,9 @@ export default function BalanceFormInput() {
                         <option>Sports, hobbies</option>
                         <option>Education</option>
                         <option>Other</option>
-                    </datalist>
+                    </select>
                 </label>
+
                 <label className={s.formLabelCalc}>
                     <input
                         className={s.formInputCalc}
