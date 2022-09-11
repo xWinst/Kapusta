@@ -3,7 +3,10 @@ import { BalanceForm } from 'components';
 const Income = () => {
     return (
         <>
-            <BalanceForm />
+            <div className={s.container}>
+                <Link to="/reports">Reports</Link>
+                <BalanceForm />
+            </div>
             <IncomeModule />
         </>
     );
