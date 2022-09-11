@@ -4,7 +4,7 @@ const Income = () => {
     return (
         <>
             <BalanceForm />
-            <IncomeModule />;
+            <IncomeModule />
         </>
     );
 };

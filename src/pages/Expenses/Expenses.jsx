@@ -10,7 +10,7 @@ const Expenses = () => {
                 <Link to="/reports">Reports</Link>
                 <BalanceForm />
             </div>
-            <ExpensesModule />;
+            <ExpensesModule />
         </>
     );
 };
