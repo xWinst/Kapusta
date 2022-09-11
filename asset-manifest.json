@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/Kapusta/static/css/main.7f20e1be.css",
-    "main.js": "/Kapusta/static/js/main.69d5c3ee.js",
+    "main.css": "/Kapusta/static/css/main.69da66b9.css",
+    "main.js": "/Kapusta/static/js/main.7c90a0d6.js",
+    "static/media/sprite.svg": "/Kapusta/static/media/sprite.c9547f3469cf89990739a30a5beed708.svg",
     "static/media/bgBottomDesktop.svg": "/Kapusta/static/media/bgBottomDesktop.7d719bc3ecca6e327582.svg",
     "static/media/bgTopTablet.svg": "/Kapusta/static/media/bgTopTablet.d67fb0c23c0bc6595d41.svg",
     "static/media/backgTopCabages.svg": "/Kapusta/static/media/backgTopCabages.63133c5768fc553df8e0.svg",
@@ -19,11 +20,11 @@
     "static/media/bgMobile.svg": "/Kapusta/static/media/bgMobile.84443502bb1029840078.svg",
     "static/media/bgTablet.svg": "/Kapusta/static/media/bgTablet.5829b22a4c0acc81fda5.svg",
     "static/media/ArrowToGoBack.svg": "/Kapusta/static/media/ArrowToGoBack.17c466509198738a4cac8f3d82296e85.svg",
-    "main.7f20e1be.css.map": "/Kapusta/static/css/main.7f20e1be.css.map",
-    "main.69d5c3ee.js.map": "/Kapusta/static/js/main.69d5c3ee.js.map"
+    "main.69da66b9.css.map": "/Kapusta/static/css/main.69da66b9.css.map",
+    "main.7c90a0d6.js.map": "/Kapusta/static/js/main.7c90a0d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f20e1be.css",
-    "static/js/main.69d5c3ee.js"
+    "static/css/main.69da66b9.css",
+    "static/js/main.7c90a0d6.js"
   ]
 }
