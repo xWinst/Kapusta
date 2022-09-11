@@ -85,13 +85,7 @@
     cursor: pointer;
 }
 
-.formBtnOrange {
-    composes: formBtn;
-    color: var(--white-color);
-    background-color: var(--accent-color);
-}
-
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
     .loginForm {
         max-width: 426px;
         padding: 56px 83px;

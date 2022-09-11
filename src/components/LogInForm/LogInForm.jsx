@@ -75,10 +75,12 @@ export default function LogInForm() {
                 />
             </label>
             <div className={s.btnCont}>
-                <button onClick={onLoginHandle} className={s.formBtnOrange}>
+                <button onClick={onLoginHandle} className={s.formBtn}>
                     LOG IN
                 </button>
-                <button onClick={onRegisterHandle}>REGISTRATION</button>
+                <button className={s.formBtn} onClick={onRegisterHandle}>
+                    REGISTRATION
+                </button>
             </div>
         </form>
     );
