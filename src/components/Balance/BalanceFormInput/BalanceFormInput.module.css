@@ -25,7 +25,7 @@
 }
 
 .formLabelProductDescription {
-    margin-left: 44px;
+    margin-left: 10px;
 }
 
 .formInputProductDescription {
@@ -112,12 +112,12 @@
     }
 
     .formInputProductCategory {
-        width: 186px;
+        width: 200px;
         border-radius: 0px;
     }
 
     .formInputProductDescription {
-        width: 180px;
+        width: 200px;
         border-bottom: 2px solid var(--bg-modal-two-colour);
         border-radius: 16px 0px 0px 0px;
         border-right: none;
@@ -151,7 +151,7 @@
     }
 
     .formInputProductCategory {
-        width: 169px;
+        width: 200px;
     }
 
     .formInputCalc {
