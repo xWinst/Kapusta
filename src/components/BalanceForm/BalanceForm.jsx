@@ -13,13 +13,13 @@ import Toast from 'components/BalanceFormToast/BalanceFormToast';
 import s from './BalanceForm.module.css';
 
 const BalanceForm = () => {
-    console.log('first');
+    // console.log('first');
     const balance = useSelector(authSelectors.getBalance);
     console.log('balance', balance);
     const incomes = useSelector(transactionOperations.getIncome);
-    console.log('incomes', incomes);
+    // console.log('incomes', incomes);
     const expenses = useSelector(transactionOperations.getExpense);
-    console.log('expenses', expenses);
+    // console.log('expenses', expenses);
     const dispatch = useDispatch();
 
     const isBalanceUnset = useMemo(() => {
@@ -81,7 +81,11 @@ const BalanceForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (balanceInput) {
-            dispatch(userOperations.changeBalance(parseInt(balanceInput)));
+            dispatch(
+                userOperations.changeBalance({
+                    newBalance: parseInt(balanceInput),
+                })
+            );
         }
     };
 
