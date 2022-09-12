@@ -1,14 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import s from './Button.module.css';
 
-const Button = ({ type, buttonName, title }) => {
-    // onClick добавить к пропам вверх
+const Button = ({ type, buttonName, title, onClick }) => {
     return (
         <button
             type={type}
             name={buttonName}
-            // onClick={onClick}
+            onClick={onClick}
             className={s.Button}
         >
             {title}
@@ -16,11 +15,11 @@ const Button = ({ type, buttonName, title }) => {
     );
 };
 
-// Button.propTypes = {
-//     onClick: PropTypes.func,
-//     type: PropTypes.string.isRequired,
-//     buttonName: PropTypes.string,
-//     title: PropTypes.string.isRequired,
-// };
+Button.propTypes = {
+    onClick: PropTypes.func,
+    type: PropTypes.string.isRequired,
+    buttonName: PropTypes.string,
+    title: PropTypes.string.isRequired,
+};
 
 export default Button;
