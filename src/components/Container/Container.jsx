@@ -17,8 +17,8 @@ export default function Container({ children, location }) {
         if (!isLoggedIn && sid) dispatch(authOperations.refreshUser());
         if (isLoggedIn) {
             dispatch(userOperations.getUser());
-            dispatch(transactionOperations.getIncome());
-            dispatch(transactionOperations.getExpense());
+            dispatch(transactionOperations.getIncomeCategories());
+            dispatch(transactionOperations.getExpenseCategories());
         }
         // Чтобы начать что-то проверять можно раскомментировать logIn ничего в нём не меняя, перезагрузить
         // страницу, потом закомментировать и уже раскомментировать refreshUser и ту операцию которая интересует.
