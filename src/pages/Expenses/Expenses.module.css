@@ -1,0 +1,57 @@
+.section {
+    display: flex;
+}
+
+/* section balance and goToReport */
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    margin-bottom: 40px;
+}
+
+.goToReport {
+    display: flex;
+    align-items: center;
+    color: var(--text-color-one);
+    margin-top: 37px;
+    font-size: 12px;
+    line-height: 14px;
+}
+.reportPic {
+    width: 25px;
+    height: 25px;
+    margin-left: 14px;
+    padding-bottom: 3px;
+    fill: var(--text-color-four);
+}
+.goToReport:hover > .reportPic {
+    fill: var(--accent-color);
+}
+.goToReport:hover {
+    color: var(--accent-color);
+}
+@media screen and (min-width: 768px) {
+    .section {
+        flex-direction: row;
+        padding-top: 40px;
+        padding-bottom: 58px;
+        justify-content: center;
+    }
+    .goToReport {
+        margin-left: 111px;
+        margin-top: 2px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .section {
+        padding-bottom: 9px;
+        padding-right: 85px;
+        justify-content: flex-end;
+    }
+    .goToReport {
+        margin-left: 205px;
+    }
+}
