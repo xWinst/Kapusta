@@ -34,9 +34,7 @@ export default function BalanceFormInput() {
 
             <label>
                 <select className={s.formInputProductCategory}>
-                    <option disabled selected>
-                        Product category
-                    </option>
+                    <option disabled>Product category</option>
                     <option>Transport</option>
                     <option>Products</option>
                     <option>Health</option>
