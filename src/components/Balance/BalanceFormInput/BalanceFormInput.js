@@ -12,6 +12,7 @@ export default function BalanceFormInput() {
     return (
         <form className={s.form} name="signup_form">
             <Calendar dateHandle={() => {}} />
+
             <div className={s.divFlexCalendarAndArrow}>
                 <button
                     className={s.goBackButton}
