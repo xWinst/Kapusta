@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom'; //Временно
 import GoogleLogo from '../../images/googleLogo.svg';
 import { useState } from 'react';
-//import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import s from './LogInForm.module.css';
+import { authOperations } from 'redux/auth';
 
 export default function LogInForm() {
     const [formFields, setFormFields] = useState({
@@ -10,9 +10,7 @@ export default function LogInForm() {
         password: '',
     });
 
-    const navigate = useNavigate(); //Временно
-
-    //const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -26,12 +24,11 @@ export default function LogInForm() {
     };
 
     const onLoginHandle = () => {
-        //dispatch();
+        dispatch(authOperations.logIn(formFields));
         resetForm();
-        navigate('expenses'); //Временно
     };
     const onRegisterHandle = () => {
-        // dispatch();
+        dispatch(authOperations.register(formFields));
         resetForm();
     };
 
