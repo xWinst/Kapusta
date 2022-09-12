@@ -14,4 +14,4 @@ const ButtonBack = () => {
     );
 };
 
-export { ButtonBack };
+export default ButtonBack;

@@ -1,4 +1,4 @@
-import { FlipButtons } from '../FlipButtons/FlipButtons';
+import { FlipButtons } from 'components';
 
 import s from './ReportsPeriod.module.css';
 
@@ -13,4 +13,4 @@ const ReportsPeriod = () => {
     );
 };
 
-export { ReportsPeriod };
+export default ReportsPeriod;

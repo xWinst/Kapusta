@@ -15,4 +15,4 @@ const ReportsTotal = () => {
     );
 };
 
-export { ReportsTotal };
+export default ReportsTotal;

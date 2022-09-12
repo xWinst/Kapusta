@@ -19,4 +19,4 @@ const FlipButtons = ({ children }) => {
     );
 };
 
-export { FlipButtons };
+export default FlipButtons;

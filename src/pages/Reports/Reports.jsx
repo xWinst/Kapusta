@@ -1,7 +1,9 @@
-import { ButtonBack } from '../../components/ButtonBack/ButtonBack';
-import { ReportsPeriod } from '../../components/ReportsPeriod/ReportsPeriod';
-import { ReportsTotal } from '../../components/ReportsTotal/ReportsTotal';
-import { ReportsCategories } from '../../components/ReportsCategories/ReportsCategories';
+import {
+    ButtonBack,
+    ReportsPeriod,
+    ReportsTotal,
+    ReportsCategories,
+} from 'components';
 
 import s from './Reports.module.css';
 
