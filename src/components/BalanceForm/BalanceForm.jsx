@@ -8,18 +8,20 @@ import { userOperations } from '../../redux/user';
 // import { getMonthStatsExpenses, getMonthStatsIncomes } from 'redux/transaction';
 // import { getExpense, getIncome } from 'redux/transaction';
 import { transactionOperations } from '../../redux/transaction';
+import transactionSelectors from '../../redux/transaction/transactionSelectors';
 
 import Toast from 'components/BalanceFormToast/BalanceFormToast';
 import s from './BalanceForm.module.css';
 
 const BalanceForm = () => {
-    // console.log('first');
     const balance = useSelector(authSelectors.getBalance);
-    console.log('balance', balance);
+
     const incomes = useSelector(transactionOperations.getIncome);
-    // console.log('incomes', incomes);
+
     const expenses = useSelector(transactionOperations.getExpense);
-    // console.log('expenses', expenses);
+
+    const transactions = useSelector(transactionSelectors.getTransactions);
+
     const dispatch = useDispatch();
 
     const isBalanceUnset = useMemo(() => {
@@ -35,13 +37,15 @@ const BalanceForm = () => {
 
     const addCurrency = value => `${value} UAH`;
 
-    const [canChange, setCanChange] = useState(isBalanceUnset);
+    // const [canChange, setCanChange] = useState(isBalanceUnset);
     const [isToastShown, setIsToastShown] = useState(isBalanceUnset);
     const [balanceInput, setBalanceInput] = useState(addCurrency(balance));
     const [balanceBackup, setBalanceBackup] = useState(balanceInput);
 
+    const canChange = transactions?.length === 0;
+
     useEffect(() => {
-        setCanChange(isBalanceUnset);
+        // setCanChange(isBalanceUnset);
         setIsToastShown(isBalanceUnset);
     }, [isBalanceUnset]);
 
