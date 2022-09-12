@@ -3,6 +3,12 @@
     display: flex;
     align-items: center;
 }
+
+.titlePrimary {
+    padding-top: 12px;
+    color: green;
+    margin-bottom: 12px;
+}
 .goBackButton {
     display: flex;
     justify-content: center;

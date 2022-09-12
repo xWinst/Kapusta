@@ -11,6 +11,7 @@ export default function BalanceMobileInput() {
     };
     return (
         <form className={s.form} name="signup_form">
+            <h1 className={s.titlePrimary}>EXPENSES OR INCOME</h1>
             <Calendar dateHandle={() => {}} />
             <div className={s.divFlexCalendarAndArrow}>
                 <button
