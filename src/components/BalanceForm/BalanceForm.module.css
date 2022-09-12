@@ -106,12 +106,18 @@
 
 .ButtonEnabled {
     composes: ButtonBase;
-
+    cursor: pointer;
     color: var(--white-color);
     border: 2px solid var(--accent-color);
     background-color: var(--accent-color);
+    transition: transform var(--anim-props), box-shadow var(--anim-props);
 }
+.ButtonEnabled:hover,
+.ButtonEnabled:focus {
+    box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
 
+    transform: scale(1.1);
+}
 .ButtonDisabled {
     composes: ButtonBase;
 
