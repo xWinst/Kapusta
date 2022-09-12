@@ -5,6 +5,7 @@ const LogOutModal = ({ text, onClose, onConfirm }) => {
     return (
         <div className={s.LogOutModal__container}>
             <svg
+                onClick={onClose}
                 className={s.LogOutModal__close}
                 xmlns="http://www.w3.org/2000/svg"
             >
