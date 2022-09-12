@@ -8,6 +8,7 @@
 
 .back__icon {
     scale: 1;
+    transition: scale var(--anim-props);
 }
 
 .back__icon:hover,
