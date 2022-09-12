@@ -1,4 +1,4 @@
-import { FlipButtons } from '../FlipButtons/FlipButtons';
+import { FlipButtons } from 'components';
 
 import s from './ReportsCategories.module.css';
 import svg from '../../images/sprite.svg';
@@ -93,4 +93,4 @@ const ReportsCategories = () => {
     );
 };
 
-export { ReportsCategories };
+export default ReportsCategories;

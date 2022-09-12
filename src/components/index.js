@@ -11,3 +11,8 @@ export { default as BalanceTable } from '../components/Balance/BalanceTable/Bala
 export { default as BalanceFormInput } from '../components/Balance/BalanceFormInput/BalanceFormInput';
 export { default as LogInForm } from './LogInForm/LogInForm';
 export { default as BalanceForm } from './BalanceForm/BalanceForm';
+export { default as ButtonBack } from './ButtonBack/ButtonBack';
+export { default as FlipButtons } from './FlipButtons/FlipButtons';
+export { default as ReportsCategories } from './ReportsCategories/ReportsCategories';
+export { default as ReportsPeriod } from './ReportsPeriod/ReportsPeriod';
+export { default as ReportsTotal } from './ReportsTotal/ReportsTotal';
