@@ -14,6 +14,7 @@
     background-color: transparent;
     border: none;
     scale: 1;
+    transition: scale var(--anim-props);
 }
 
 .flipbutton:hover,
