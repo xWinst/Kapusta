@@ -8,55 +8,10 @@
     color: rgba(82, 85, 95, 0.7);
 }
 
-.back {
-    display: flex;
-    align-items: center;
-    border: none;
-    background-color: transparent;
-    color: inherit;
-}
-
-.back__icon {
-    scale: 1;
-}
-
-.back__icon:hover,
-.back__icon:focus {
-    scale: 1.1;
-}
-
-.back__text {
-    display: none;
-}
-/* ----- Current period ----- */
-
-.period {
-    text-align: center;
-}
-
-.period__text {
-    margin-bottom: 5px;
-}
-
-.period__title {
-    color: #000000;
-    font-size: 14px;
-    line-height: 1.14;
-    text-transform: uppercase;
-}
-
 @media screen and (min-width: 768px) {
     .reports__nav {
         display: flex;
         justify-content: space-between;
         padding: 0 0 32px 0;
-    }
-
-    .back__icon {
-        margin-right: 15px;
-    }
-
-    .back__text {
-        display: inline-block;
     }
 }
