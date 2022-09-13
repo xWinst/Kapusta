@@ -28,7 +28,7 @@
     border: 2px solid var(--bg-modal-two-colour);
     border-radius: 0px 0px 16px 0px;
 
-    color: var(--modal-nonaccent-text-color);
+    cursor: pointer;
 }
 
 .formLabelCalc {
