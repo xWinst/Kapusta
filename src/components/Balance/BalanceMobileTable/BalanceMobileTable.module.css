@@ -34,16 +34,26 @@
     display: flex;
 }
 
-.divTextFlex__text {
+.textDate {
+    height: 7px;
+    width: 70px;
+
+    margin-right: 5px;
+
     font-size: 12px;
     line-height: 1.12;
     letter-spacing: 0.04em;
-
+    text-align: left;
     color: var(--text-color-four);
 }
 
-.divTextFlex__text:first-child {
-    margin-right: 20px;
+.textCategory {
+    width: 140px;
+    font-size: 12px;
+    line-height: 1.12;
+    letter-spacing: 0.04em;
+    /* text-align: left; */
+    color: var(--text-color-four);
 }
 
 .divSumAndButtonFlex {
@@ -52,16 +62,32 @@
     align-items: center;
 }
 
-.divSumAndButtonFlex__sum {
+.divSumAndButtonFlex__SumExpenses {
+    width: 80px;
+
+    margin-right: 5px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+
+    text-align: center;
+
+    letter-spacing: 0.04em;
+
+    color: var(--negative-sum-color);
+}
+
+.divSumAndButtonFlex__SumIncomes {
+    width: 80px;
+    margin-right: 5px;
+    text-align: center;
     font-weight: 700;
     font-size: 12px;
     line-height: 1.17;
 
     letter-spacing: 0.04em;
 
-    color: green;
-
-    margin-right: 20px;
+    color: var(--positive-sum-color);
 }
 
 .btnDelete {

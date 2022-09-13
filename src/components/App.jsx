@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { SharedLayout } from 'components';
 import {
@@ -6,21 +8,41 @@ import {
     Income,
     Reports,
     PageNotFound,
-    BalanceInput,
+    BalanceMobileInputPage,
     Home,
 } from 'pages';
 
 export const App = () => {
     return (
-        <Routes>
-            <Route path="/" element={<SharedLayout />}>
-                <Route index element={<Home />} />
-                <Route path="expenses" element={<Expenses />} />
-                <Route path="income" element={<Income />} />
-                <Route path="reports" element={<Reports />} />
-                <Route path="balance-input-mobile" element={<BalanceInput />} />
-                <Route path="*" element={<PageNotFound />} />
-            </Route>
-        </Routes>
+        <>
+            <Routes>
+                <Route path="/" element={<SharedLayout />}>
+                    <Route index element={<Home />} />
+                    <Route path="expenses" element={<Expenses />} />
+                    <Route path="income" element={<Income />} />
+                    <Route path="reports" element={<Reports />} />
+                    <Route
+                        path="/expenses-input-mobile"
+                        element={<BalanceMobileInputPage />}
+                    />
+                    <Route
+                        path="/incomes-input-mobile"
+                        element={<BalanceMobileInputPage />}
+                    />
+                    <Route path="*" element={<PageNotFound />} />
+                </Route>
+            </Routes>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+        </>
     );
 };
