@@ -26,6 +26,14 @@
     filter: drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2));
 }
 
+.googleBtn:hover,
+.googleBtn:focus {
+    background-color: var(--accent-color);
+    box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
 .googleText {
     margin: 0 10px 16px;
     text-align: center;
@@ -97,6 +105,14 @@
     cursor: pointer;
 }
 
+.formBtn:hover,
+.formBtn:focus {
+    background-color: var(--accent-color);
+    box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
 .pswdVisBtn {
     width: 20px;
     height: 20px;
@@ -112,8 +128,9 @@
 }
 
 .errorMessage {
-    background-color: var(--accent-color);
+    color: red;
     margin-bottom: 15px;
+    margin-top: 15px;
     border-radius: 8px;
     padding: 5px;
 }

@@ -8,6 +8,9 @@ import { addExpense, addIncome } from 'redux/transaction/transactionOperations';
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import s from '../BalanceMobileInput/BalanceMobileInput.module.css';
 
 export default function BalanceMobileInput({ title }) {
@@ -40,7 +43,27 @@ export default function BalanceMobileInput({ title }) {
     });
 
     const formData = ({ description, category, date, amount }) => {
-        if (pathname === '/expenses-input-mobile') {
+        if (amount < 1) {
+            toast.warn('Input minimum 1 UAH!', {
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+
+                draggable: true,
+                progress: undefined,
+            });
+        } else if (category === 'DEFAULT') {
+            toast.warn('Please choose category!', {
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+
+                draggable: true,
+                progress: undefined,
+            });
+        } else if (pathname === '/expenses-input-mobile') {
             dispatch(addExpense({ description, category, date, amount }));
         } else if (pathname === '/incomes-input-mobile') {
             dispatch(addIncome({ description, category, date, amount }));
@@ -69,12 +92,14 @@ export default function BalanceMobileInput({ title }) {
         event.preventDefault();
 
         formData({ description, category, date, amount });
-        resetForm();
+        if (category !== 'DEFAULT') {
+            resetForm();
+        }
     };
 
     const resetForm = () => {
         setDescription('');
-        setCategory('');
+        setCategory('DEFAULT');
         setAmount('');
         setDate();
     };
@@ -90,27 +115,30 @@ export default function BalanceMobileInput({ title }) {
 
     return (
         <form onSubmit={onFormSubmit} className={s.form} name="signup_form">
-            <h1
-                className={
-                    pathname === '/expenses-input-mobile'
-                        ? s.titleExpenses
-                        : s.titleIncomes
-                }
-            >
-                {title}
-            </h1>
-            <Calendar dateHandle={dateHandle} />
             <div className={s.divFlexCalendarAndArrow}>
                 <GoBackArrow />
+                <h1
+                    className={
+                        pathname === '/expenses-input-mobile'
+                            ? s.titleExpenses
+                            : s.titleIncomes
+                    }
+                >
+                    {title}
+                </h1>
             </div>
+
+            <Calendar dateHandle={dateHandle} />
+
             <label className={s.formLabelProductDescription}>
                 <input
+                    required
                     onChange={handleInputChange}
                     maxLength="24"
                     className={s.formInputProductDescription}
                     type="text"
                     name="description"
-                    placeholder="Product description max symbols length 24 "
+                    placeholder="Product description"
                     value={description}
                 />
             </label>
@@ -133,11 +161,12 @@ export default function BalanceMobileInput({ title }) {
             </label>
             <label className={s.formLabelCalc}>
                 <input
+                    required
                     onChange={handleInputChange}
                     className={s.formInputCalc}
                     name="amount"
                     type="number"
-                    placeholder="0,00"
+                    placeholder="0,00 UAH"
                     step=".01"
                     value={amount}
                 ></input>

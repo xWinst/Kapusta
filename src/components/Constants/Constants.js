@@ -10,4 +10,4 @@ export const  SPORT_CATEGORY = 'Спорт и хобби';
 export const  EDUCATION_CATEGORY = 'Образование';
 export const  OTHER_CATEGORY = 'Прочее';
 export const SALARY_CATEGORY = 'З/П';
-export const  ADDITIONAL_INCOME_CATEGORY = 'Доп/Доход';
+export const  ADDITIONAL_INCOME_CATEGORY = 'Доп. доход';

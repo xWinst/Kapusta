@@ -6,6 +6,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addExpense, addIncome } from 'redux/transaction/transactionOperations';
 import shortid from 'shortid';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import s from '../BalanceFormInput/BalanceFormInput.module.css';
 
 export default function BalanceFormInput() {
@@ -32,14 +35,34 @@ export default function BalanceFormInput() {
     const productsIncome = useSelector(state => state.finance.incomeCategories);
     const productsIncomeElemets = productsIncome?.map(el => {
         return (
-            <option value={el} key={shortid()}>
+            <option className={s.selectOption} value={el} key={shortid()}>
                 {el}
             </option>
         );
     });
 
     const formData = ({ description, category, date, amount }) => {
-        if (pathname === '/expenses') {
+        if (amount < 1) {
+            toast.warn('Input minimum 1 UAH!', {
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+
+                draggable: true,
+                progress: undefined,
+            });
+        } else if (category === 'DEFAULT') {
+            toast.warn('Please choose category!', {
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+
+                draggable: true,
+                progress: undefined,
+            });
+        } else if (pathname === '/expenses') {
             dispatch(addExpense({ description, category, date, amount }));
         } else if (pathname === '/income') {
             dispatch(addIncome({ description, category, date, amount }));
@@ -67,12 +90,15 @@ export default function BalanceFormInput() {
     const onFormSubmit = event => {
         event.preventDefault();
         formData({ description, category, date, amount });
-        resetForm();
+
+        if (category !== 'DEFAULT') {
+            resetForm();
+        }
     };
 
     const resetForm = () => {
         setDescription('');
-        setCategory('');
+        setCategory('DEFAULT');
         setAmount('');
         setDate();
     };
@@ -91,6 +117,7 @@ export default function BalanceFormInput() {
             <Calendar dateHandle={dateHandle} />
             <label className={s.formLabelProductDescription}>
                 <input
+                    required
                     onChange={handleInputChange}
                     className={s.formInputProductDescription}
                     type="text"
@@ -104,7 +131,6 @@ export default function BalanceFormInput() {
                     name="category"
                     onChange={handleInputChange}
                     className={s.formInputProductCategory}
-                    // defaultValue={'DEFAULT'}
                     value={category}
                 >
                     <option disabled value={'DEFAULT'}>
@@ -117,11 +143,12 @@ export default function BalanceFormInput() {
             </label>
             <label className={s.formLabelCalc}>
                 <input
+                    required
                     onChange={handleInputChange}
                     className={s.formInputCalc}
                     name="amount"
                     type="number"
-                    placeholder="0,00"
+                    placeholder="0,00 UAH"
                     step=".01"
                     value={amount}
                 ></input>

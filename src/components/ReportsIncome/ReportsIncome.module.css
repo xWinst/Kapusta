@@ -50,8 +50,8 @@
 
 }
 
-.content_container:not(:first-child){
-  margin-left: 10px;
+.content__container:not(:first-child){
+  margin-left: 20px;
 }
 
 .content__container{
