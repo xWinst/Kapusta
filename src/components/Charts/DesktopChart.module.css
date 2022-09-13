@@ -1,0 +1,27 @@
+.Chart__item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.Chart__item:not(:last-child){
+  margin-right: 25px;
+}
+
+.charts__bar{
+  border-radius: 10px 10px 0px 0px;
+  width: 38px;
+  margin: 0 auto;
+}
+
+
+.chartItem__text{
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+letter-spacing: 0.02em;
+color: #52555F;
+}

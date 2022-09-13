@@ -1,57 +1,22 @@
-const MobileChart = () => {
-    const initialState = [
-        {
-            name: 'Свинина',
-            price: 5000,
-            id: '1',
-        },
-        {
-            name: 'Говядина',
-            price: 4500,
-            id: '2',
-        },
-        {
-            name: 'Курица',
-            price: 3200,
-            id: '3',
-        },
-        {
-            name: 'Рыба',
-            price: 2100,
-            id: '4',
-        },
-        {
-            name: 'Панини',
-            price: 1800,
-            id: '5',
-        },
-        {
-            name: 'Кофе',
-            price: 1700,
-            id: '6',
-        },
-        {
-            name: 'Спагети',
-            price: 1500,
-            id: '7',
-        },
-        {
-            name: 'Шоколад',
-            price: 800,
-            id: '8',
-        },
-        {
-            name: 'Маслины',
-            price: 500,
-            id: '9',
-        },
-        {
-            name: 'Зелень',
-            price: 300,
-            id: '10',
-        },
-    ];
-    const maxExpence = initialState[0].price;
+import { nanoid } from "@reduxjs/toolkit";
+
+const MobileChart = ({objectForChart}) => {
+
+
+
+    // Преобразование обькта с обьектами в массив массивов
+    const result = Object.entries(objectForChart);
+    // Удаление елемента тотал, т.к. он не нужен в графиках
+    const totalElementOfArray = result.shift();
+
+    console.log(totalElementOfArray)
+    // сортировка по убыванию
+    result.sort((a,b)=>(b[1] - a[1]))
+
+
+
+
+
     const chartListContainerStyle = {
         marginRight: 'auto',
         marginLeft: 'auto',
@@ -68,12 +33,14 @@ const MobileChart = () => {
         marginBottom: 2,
     };
 
+
+
     return (
         <div style={chartListContainerStyle}>
             <ul>
-                {initialState &&
-                    initialState.map(el => (
-                        <li key={el.id} style={{ paddingBottom: 20 }}>
+                {result &&
+                    result.map(el => (
+                        <li key={nanoid()} style={{ paddingBottom: 20 }}>
                             <div
                                 style={{
                                     display: 'flex',
@@ -81,15 +48,15 @@ const MobileChart = () => {
                                     justifyContent: 'space-between',
                                 }}
                             >
-                                <span style={textStyle}>{el.name}</span>
-                                <span style={textStyle}>{el.price} грн</span>
+                                <span style={textStyle}>{el[0]}</span>
+                                <span style={textStyle}>{el[1]} грн</span>
                             </div>
                             <div
                                 style={{
-                                    width:el.price / maxExpence * 270,
+                                    width:el[1] / result[0][1] *  250,
                                     height: '15px',
                                     background:
-                                        el.id % 3 === 1 ? '#FF751D' : '#FED9BF',
+                                        el[1] % 3 === 1 ? '#FF751D' : '#FED9BF',
                                     borderTopRightRadius: 10,
                                     borderBottomRightRadius: 10,
                                 }}

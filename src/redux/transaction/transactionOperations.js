@@ -119,7 +119,7 @@ export const getTransactionsByPeriod = createAsyncThunk(
     async (date, { rejectWithValue }) => {
         try {
             const { data } = await axios.get(
-                `/transaction/period-data?date=${date}`
+                `/transaction/period-data?date=2022-${date}`
             );
             return data;
         } catch (error) {

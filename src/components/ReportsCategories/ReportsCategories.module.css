@@ -2,11 +2,11 @@
     padding-top: 16px;
     background-color: #fff;
     border-radius: 30px;
+    min-height: 378px;
 }
 
 .categories__title {
     margin: 0 10px;
-
     color: #000000;
     font-size: 14px;
     line-height: 1.14;
@@ -64,4 +64,50 @@
     .categories {
         padding: 20px 200px;
     }
+}
+
+
+.categories__text{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #52555F;
+}
+
+.flipbutton {
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--accent-color);
+  background-color: transparent;
+  border: none;
+  scale: 1;
+  transition: scale var(--anim-props);
+}
+
+.flipbutton:hover,
+.flipbutton:focus {
+  scale: 1.2;
+}
+.button__group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expenses__title{
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
 }
