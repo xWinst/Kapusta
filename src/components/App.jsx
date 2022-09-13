@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { SharedLayout } from 'components';
+import { SharedLayout, PrivateRoute } from 'components';
 import {
     Expenses,
     Income,
@@ -21,14 +21,27 @@ export const App = () => {
                     <Route path="expenses" element={<Expenses />} />
                     <Route path="income" element={<Income />} />
                     <Route path="reports" element={<Reports />} />
-                    <Route
+
+                    <Route element={<PrivateRoute />}>
+                        <Route
+                            path="/incomes-input-mobile"
+                            element={<BalanceMobileInputPage />}
+                        />
+                    </Route>
+                    <Route element={<PrivateRoute />}>
+                        <Route
+                            path="/expenses-input-mobile"
+                            element={<BalanceMobileInputPage />}
+                        />
+                    </Route>
+                    {/* <Route
                         path="/expenses-input-mobile"
                         element={<BalanceMobileInputPage />}
-                    />
-                    <Route
+                    /> */}
+                    {/* <Route
                         path="/incomes-input-mobile"
                         element={<BalanceMobileInputPage />}
-                    />
+                    /> */}
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
             </Routes>

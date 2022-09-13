@@ -11,7 +11,7 @@ import s from '../BalanceFormInput/BalanceFormInput.module.css';
 export default function BalanceFormInput() {
     const dispatch = useDispatch();
     const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('DEFAULT');
     const [amount, setAmount] = useState('');
     const [date, setDate] = useState('');
 
@@ -20,13 +20,22 @@ export default function BalanceFormInput() {
     const productsExpense = useSelector(
         state => state.finance.expenseCategories
     );
+
     const productsExpenseElemets = productsExpense?.map(el => {
-        return <option key={shortid()}>{el}</option>;
+        return (
+            <option value={el} key={shortid()}>
+                {el}
+            </option>
+        );
     });
 
     const productsIncome = useSelector(state => state.finance.incomeCategories);
     const productsIncomeElemets = productsIncome?.map(el => {
-        return <option key={shortid()}>{el}</option>;
+        return (
+            <option value={el} key={shortid()}>
+                {el}
+            </option>
+        );
     });
 
     const formData = ({ description, category, date, amount }) => {
@@ -46,22 +55,26 @@ export default function BalanceFormInput() {
             case 'amount':
                 setAmount(Number(value));
                 break;
+            case 'category':
+                setCategory(value);
+                break;
+
             default:
                 return;
         }
     };
 
-    const onChangeSelect = event => {
-        setCategory(event.target.value);
-    };
-
     const onFormSubmit = event => {
         event.preventDefault();
+        formData({ description, category, date, amount });
+        resetForm();
+    };
+
+    const resetForm = () => {
         setDescription('');
         setCategory('');
         setAmount('');
-        // setDate('');
-        formData({ description, category, date, amount });
+        setDate();
     };
 
     const dateHandle = date => {
@@ -88,9 +101,11 @@ export default function BalanceFormInput() {
             </label>
             <label>
                 <select
-                    onChange={onChangeSelect}
+                    name="category"
+                    onChange={handleInputChange}
                     className={s.formInputProductCategory}
-                    defaultValue={'DEFAULT'}
+                    // defaultValue={'DEFAULT'}
+                    value={category}
                 >
                     <option disabled value={'DEFAULT'}>
                         Product category
@@ -113,7 +128,14 @@ export default function BalanceFormInput() {
             </label>
             <div className={s.formButtonsDiv}>
                 <Button type={'submit'} buttonName={'input'} title={'Input'} />
-                <Button type={'submit'} buttonName={'clear'} title={'Clear'} />
+                <Button
+                    onClick={() => {
+                        resetForm();
+                    }}
+                    type={'button'}
+                    buttonName={'clear'}
+                    title={'Clear'}
+                />
             </div>
         </form>
     );

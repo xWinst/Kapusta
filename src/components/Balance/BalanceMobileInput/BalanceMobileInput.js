@@ -13,7 +13,7 @@ import s from '../BalanceMobileInput/BalanceMobileInput.module.css';
 export default function BalanceMobileInput({ title }) {
     const dispatch = useDispatch();
     const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('DEFAULT');
     const [amount, setAmount] = useState('');
     const [date, setDate] = useState('');
 
@@ -23,12 +23,20 @@ export default function BalanceMobileInput({ title }) {
         state => state.finance.expenseCategories
     );
     const productsExpenseElemets = productsExpense?.map(el => {
-        return <option key={shortid()}>{el}</option>;
+        return (
+            <option value={el} key={shortid()}>
+                {el}
+            </option>
+        );
     });
 
     const productsIncome = useSelector(state => state.finance.incomeCategories);
     const productsIncomeElemets = productsIncome?.map(el => {
-        return <option key={shortid()}>{el}</option>;
+        return (
+            <option value={el} key={shortid()}>
+                {el}
+            </option>
+        );
     });
 
     const formData = ({ description, category, date, amount }) => {
@@ -48,22 +56,27 @@ export default function BalanceMobileInput({ title }) {
             case 'amount':
                 setAmount(Number(value));
                 break;
+            case 'category':
+                setCategory(value);
+                break;
+
             default:
                 return;
         }
     };
 
-    const onChangeSelect = event => {
-        setCategory(event.target.value);
-    };
-
     const onFormSubmit = event => {
         event.preventDefault();
+
+        formData({ description, category, date, amount });
+        resetForm();
+    };
+
+    const resetForm = () => {
         setDescription('');
         setCategory('');
         setAmount('');
-        // setDate('');
-        formData({ description, category, date, amount });
+        setDate();
     };
 
     const dateHandle = date => {
@@ -103,9 +116,10 @@ export default function BalanceMobileInput({ title }) {
             </label>
             <label>
                 <select
-                    onChange={onChangeSelect}
+                    name="category"
+                    onChange={handleInputChange}
                     className={s.formInputProductCategory}
-                    defaultValue={'DEFAULT'}
+                    value={category}
                 >
                     <option disabled value={'DEFAULT'}>
                         Product category
@@ -130,106 +144,17 @@ export default function BalanceMobileInput({ title }) {
             </label>
             <div className={s.formButtonsDiv}>
                 <Button type={'submit'} buttonName={'input'} title={'Input'} />
-                <Button type={'submit'} buttonName={'clear'} title={'Clear'} />
+                <Button
+                    onClick={() => {
+                        resetForm();
+                    }}
+                    type={'button'}
+                    buttonName={'clear'}
+                    title={'Clear'}
+                />
             </div>
         </form>
     );
-    // const dispatch = useDispatch();
-    // const [description, setDescription] = useState('');
-    // const [category, setCategory] = useState('');
-    // const [amount, setAmount] = useState('');
-    // const [date, setDate] = useState('');
-    // const { pathname } = useLocation();
-    // const productsExpense = useSelector(
-    //     state => state.finance.expenseCategories
-    // );
-    // const productsExpenseElemets = productsExpense?.map(el => {
-    //     return <option key={shortid()}>{el}</option>;
-    // });
-    // const productsIncome = useSelector(state => state.finance.incomeCategories);
-    // const productsIncomeElemets = productsIncome?.map(el => {
-    //     return <option key={shortid()}>{el}</option>;
-    // });
-    // const formData = ({ description, category, date, amount }) => {
-    //     if (pathname === '/expenses-input-mobile') {
-    //         dispatch(addExpense({ description, category, date, amount }));
-    //     } else if (pathname === '/incomes-input-mobile') {
-    //         dispatch(addIncome({ description, category, date, amount }));
-    //     }
-    // };
-    // const handleInputChange = event => {
-    //     const { name, value } = event.target;
-    //     switch (name) {
-    //         case 'description':
-    //             setDescription(value);
-    //             break;
-    //         case 'amount':
-    //             setAmount(Number(value));
-    //             break;
-    //         default:
-    //             return;
-    //     }
-    // };
-    // const onChangeSelect = event => {
-    //     setCategory(event.target.value);
-    // };
-    // const onFormSubmit = event => {
-    //     event.preventDefault();
-    //     setDescription('');
-    //     setCategory('');
-    //     setAmount('');
-    //     // setDate('');
-    //     formData({ description, category, date, amount });
-    // };
-    // return (
-    //     <form onSubmit={onFormSubmit} className={s.form} name="signup_form">
-    //         <h1 className={s.titlePrimary}>{title}</h1>
-    //         <Calendar dateHandle={() => {}} />
-    //         <div className={s.divFlexCalendarAndArrow}>
-    //             <GoBackArrow />
-    //         </div>
-    //         <label className={s.formLabelProductDescription}>
-    //             <input
-    //                 onChange={handleInputChange}
-    //                 className={s.formInputProductDescription}
-    //                 type="text"
-    //                 name="text"
-    //                 placeholder="Product description"
-    //                 value={description}
-    //             />
-    //         </label>
-    //         <label>
-    //             <select
-    //                 onChange={onChangeSelect}
-    //                 className={s.formInputProductCategory}
-    //                 defaultValue={'DEFAULT'}
-    //             >
-    //                 <option disabled value={'DEFAULT'}>
-    //                     Product category
-    //                 </option>
-    //                 {pathname === '/expenses-input-mobile' &&
-    //                     productsExpenseElemets}
-    //                 {pathname === '/incomes-input-mobile' &&
-    //                     productsIncomeElemets}
-    //             </select>
-    //         </label>
-    //         <label className={s.formLabelCalc}>
-    //             <input
-    //                 onChange={handleInputChange}
-    //                 className={s.formInputCalc}
-    //                 name="calc"
-    //                 type="number"
-    //                 placeholder="0,00"
-    //                 step=".01"
-    //                 value={amount}
-    //             />
-    //         </label>
-    //         <div className={s.formButtonsDiv}>
-    //             <Button type={'submit'} buttonName={'input'} title={'Input'} />
-    //             <Button type={'sumbit'} buttonName={'clear'} title={'Clear'} />
-    //         </div>
-    //     </form>
-    // );
 }
 
 BalanceMobileInput.propTypes = {
