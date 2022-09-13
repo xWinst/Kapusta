@@ -51,8 +51,6 @@ const DesktopChart = ({objectForChart}) => {
         zIndex: 2,
     };
 
-
-
     return (
         <div style={chartListContainerStyle}>
             <ul
@@ -88,14 +86,19 @@ const DesktopChart = ({objectForChart}) => {
             </ul>
             <ul style={chartListStyle}>
                 {result
-                    ? result.map((el,index) => (
-                          <li  className= {s.Chart__item}  key={nanoid()}>
-                              <span className={s.chartItem__text}>{el[1]}грн</span>
-                              <div className={s.charts__bar}
+                    ? result.map((el, index) => (
+                          <li className={s.Chart__item} key={nanoid()}>
+                              <span className={s.chartItem__text}>
+                                  {el[1]}грн
+                              </span>
+                              <div
+                                  className={s.charts__bar}
                                   style={{
-                                      height:
-                                      el[1] / result[0][1] * 328,
-                                      backgroundColor:index % 3 === 0 ? '#FF751D' : '#FFDAC0',
+                                      height: (el[1] / result[0][1]) * 328,
+                                      backgroundColor:
+                                          index % 3 === 0
+                                              ? '#FF751D'
+                                              : '#FFDAC0',
                                   }}
                               ></div>
                               <span className={s.chartItem__text}>{el[0]}</span>
