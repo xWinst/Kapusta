@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { authOperations } from 'redux/auth';
 import { userOperations } from 'redux/user';
 import { transactionOperations } from 'redux/transaction';
 // import { useAuth } from 'hooks';
 import s from './Container.module.css';
 
-export default function Container({ children, location }) {
+export default function Container({ children }) {
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
     const sid = useSelector(state => state.auth.sid);
@@ -101,17 +102,14 @@ export default function Container({ children, location }) {
     // dispatch(transactionOperations.getTransactionsByPeriod('2022-08'));
     // }, 1000);
 
-    location = '/login';
+    const { pathname } = useLocation();
 
     const containerClass =
-        location === '/login' || location === '/register'
-            ? s.containerLogedOut
-            : s.containerLogedIn;
+        pathname === '/' ? s.containerLogedOut : s.containerLogedIn;
 
     return <div className={containerClass}>{children}</div>;
 }
 
 Container.propTypes = {
     children: PropTypes.node,
-    location: PropTypes.string,
 };
