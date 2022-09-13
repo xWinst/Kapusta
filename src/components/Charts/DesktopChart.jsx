@@ -1,21 +1,14 @@
-
-import s from './DesktopChart.module.css'
+import s from './DesktopChart.module.css';
 import { nanoid } from '@reduxjs/toolkit';
-const DesktopChart = ({objectForChart}) => {
-
-
-
-
+const DesktopChart = ({ objectForChart }) => {
     // Преобразование обькта с обьектами в массив массивов
     const result = Object.entries(objectForChart);
 
     // Удаление елемента тотал, т.к. он не нужен в графиках
-    const totalElementOfArray = result.shift();
+    result.shift();
 
     // сортировка по убыванию
-    result.sort((a,b)=>(b[1] - a[1]))
-
-
+    result.sort((a, b) => b[1] - a[1]);
 
     const chartListContainerStyle = {
         position: 'relative',
@@ -43,8 +36,6 @@ const DesktopChart = ({objectForChart}) => {
         justifyContent: 'center',
         zIndex: 2,
     };
-
-
 
     return (
         <div style={chartListContainerStyle}>
@@ -81,14 +72,19 @@ const DesktopChart = ({objectForChart}) => {
             </ul>
             <ul style={chartListStyle}>
                 {result
-                    ? result.map((el,index) => (
-                          <li  className= {s.Chart__item}  key={nanoid()}>
-                              <span className={s.chartItem__text}>{el[1]}грн</span>
-                              <div className={s.charts__bar}
+                    ? result.map((el, index) => (
+                          <li className={s.Chart__item} key={nanoid()}>
+                              <span className={s.chartItem__text}>
+                                  {el[1]}грн
+                              </span>
+                              <div
+                                  className={s.charts__bar}
                                   style={{
-                                      height:
-                                      el[1] / result[0][1] * 328,
-                                      backgroundColor:index % 3 === 0 ? '#FF751D' : '#FFDAC0',
+                                      height: (el[1] / result[0][1]) * 328,
+                                      backgroundColor:
+                                          index % 3 === 0
+                                              ? '#FF751D'
+                                              : '#FFDAC0',
                                   }}
                               ></div>
                               <span className={s.chartItem__text}>{el[0]}</span>
