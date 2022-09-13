@@ -3,14 +3,28 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import s from './LogInForm.module.css';
 import { authOperations } from 'redux/auth';
+import { useGoogleLogin } from '@moeindana/google-oauth';
 
 export default function LogInForm() {
     const [formFields, setFormFields] = useState({
         email: '',
         password: '',
     });
-
     const dispatch = useDispatch();
+
+    // const loginDisp = () => {
+    //     dispatch(authOperations.googleLogIn());
+    // };
+
+    const login = useGoogleLogin({
+        onSuccess: tokenResponse => {
+            const data = {
+                email: tokenResponse.email,
+                password: tokenResponse.id,
+            };
+            dispatch(authOperations.register(data));
+        },
+    });
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -37,7 +51,13 @@ export default function LogInForm() {
             <p className={s.googleText}>
                 You can log in with your Google Account:
             </p>
-            <button className={s.googleBtn} type="button">
+            <button
+                onClick={() => {
+                    login();
+                }}
+                className={s.googleBtn}
+                type="button"
+            >
                 <img src={GoogleLogo} alt="Google logo" />
             </button>
             <p className={s.formText}>
