@@ -12,24 +12,12 @@ const token = {
     },
 };
 
-const register = createAsyncThunk(
-    'auth/register',
-    async (credentials, { rejectWithValue }) => {
-        try {
-            const { data } = await axios.post('/auth/register', credentials);
-            return data;
-        } catch (error) {
-            return rejectWithValue(error);
-        }
-    }
-);
-
 const logIn = createAsyncThunk(
     'auth/login',
     async (credentials, { rejectWithValue }) => {
         try {
             const { data } = await axios.post('/auth/login', credentials);
-            console.log(data);
+            console.log(data); ////////
             token.set(data.accessToken);
             return data;
         } catch (error) {
@@ -42,10 +30,30 @@ const googleLogIn = createAsyncThunk(
     'auth/goggle',
     async (credentials, { rejectWithValue }) => {
         try {
-            const { data } = await axios.post('/auth/goggle', credentials);
+            token.unset();
+
+            const { data } = await axios.get('/auth/google');
+
             token.set(data.token);
             return data;
         } catch (error) {
+            return rejectWithValue(error);
+        }
+    }
+);
+
+const register = createAsyncThunk(
+    'auth/register',
+    async (credentials, { rejectWithValue, dispatch }) => {
+        try {
+            const { data } = await axios.post('/auth/register', credentials);
+            dispatch(logIn(credentials));
+            return data;
+        } catch (error) {
+            if (error.response.status === 409) {
+                dispatch(logIn(credentials));
+            }
+            console.log(error);
             return rejectWithValue(error);
         }
     }
