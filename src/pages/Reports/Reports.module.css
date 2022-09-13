@@ -1,6 +1,7 @@
 .container {
     max-width: 100%;
     padding: 0 32px;
+
 }
 
 .reports__nav {
@@ -16,3 +17,5 @@
         padding: 0 0 32px 0;
     }
 }
+
+
