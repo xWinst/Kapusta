@@ -1,22 +1,19 @@
 .divFlexCalendarAndArrow {
-    position: relative;
     display: flex;
     align-items: center;
 }
 
 .titleExpenses {
-    padding-top: 12px;
-
-    margin-bottom: 12px;
+    padding-top: 30px;
+    margin-bottom: 30px;
 
     text-transform: uppercase;
     color: var(--negative-sum-color);
 }
 
 .titleIncomes {
-    padding-top: 12px;
-
-    margin-bottom: 12px;
+    padding-top: 30px;
+    margin-bottom: 30px;
 
     text-transform: uppercase;
     color: var(--positive-sum-color);
@@ -54,8 +51,8 @@
 }
 
 .formLabelCalc {
-    margin-top: 32px;
-    margin-bottom: 80px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 .formInputCalc {
     font-family: 'Roboto', sans-serif;
@@ -95,6 +92,7 @@
     }
 
     .form {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;

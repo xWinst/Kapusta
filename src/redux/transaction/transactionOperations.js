@@ -22,6 +22,14 @@ export const addIncome = createAsyncThunk(
 
             return data;
         } catch (error) {
+            toast.error('error', {
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                progress: undefined,
+            });
             return rejectWithValue(error);
         }
     }
