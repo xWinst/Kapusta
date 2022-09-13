@@ -39,7 +39,7 @@
 .btnExit {
     background-color: var(--white-color);
     border: none;
-    border-left: 1px solid var(--header-verical-line-bg-color);
+    border-left: 1px solid var(--header-vertical-line-bg-color);
     font-weight: 400;
     height: 36px;
     font-size: 12px;
