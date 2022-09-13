@@ -1,18 +1,30 @@
-import { useNavigate } from 'react-router-dom'; //Временно
 import GoogleLogo from '../../images/googleLogo.svg';
 import { useState } from 'react';
-//import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import s from './LogInForm.module.css';
+import { authOperations } from 'redux/auth';
+import { useGoogleLogin } from '@moeindana/google-oauth';
 
 export default function LogInForm() {
     const [formFields, setFormFields] = useState({
         email: '',
         password: '',
     });
+    const dispatch = useDispatch();
 
-    const navigate = useNavigate(); //Временно
+    // const loginDisp = () => {
+    //     dispatch(authOperations.googleLogIn());
+    // };
 
-    //const dispatch = useDispatch();
+    const login = useGoogleLogin({
+        onSuccess: tokenResponse => {
+            const data = {
+                email: tokenResponse.email,
+                password: tokenResponse.id,
+            };
+            dispatch(authOperations.register(data));
+        },
+    });
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -26,12 +38,11 @@ export default function LogInForm() {
     };
 
     const onLoginHandle = () => {
-        //dispatch();
+        dispatch(authOperations.logIn(formFields));
         resetForm();
-        navigate('expenses'); //Временно
     };
     const onRegisterHandle = () => {
-        // dispatch();
+        dispatch(authOperations.register(formFields));
         resetForm();
     };
 
@@ -40,7 +51,13 @@ export default function LogInForm() {
             <p className={s.googleText}>
                 You can log in with your Google Account:
             </p>
-            <button className={s.googleBtn} type="button">
+            <button
+                onClick={() => {
+                    login();
+                }}
+                className={s.googleBtn}
+                type="button"
+            >
                 <img src={GoogleLogo} alt="Google logo" />
             </button>
             <p className={s.formText}>

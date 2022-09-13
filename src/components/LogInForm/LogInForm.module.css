@@ -26,6 +26,11 @@
     filter: drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2));
 }
 
+.googleText {
+    margin: 0 10px 16px;
+    text-align: center;
+}
+
 .formText {
     font-weight: 400;
     font-size: 12px;
@@ -53,14 +58,19 @@
     border-radius: 26px;
     background-color: var(--form-bg-text-color);
     margin-top: 12px;
-}
-.formInput::placeholder {
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.04em;
     color: var(--text-color-three);
 }
+/* .formInput::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: var(--text-color-three);
+} */
 .btnCont {
     margin-top: 40px;
     display: flex;
