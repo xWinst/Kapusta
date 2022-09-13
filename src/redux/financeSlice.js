@@ -115,6 +115,10 @@ const financeSlice = createSlice({
                 ...state.userData.transactions,
                 action.payload.transaction,
             ];
+            state.userIncomes.incomes = [
+                ...state.userIncomes.incomes,
+                action.payload.transaction,
+            ];
             state.userData.balance = action.payload.newBalance;
         },
         [transactionOperations.getIncome.fulfilled](state, action) {
@@ -124,6 +128,10 @@ const financeSlice = createSlice({
         [transactionOperations.addExpense.fulfilled](state, action) {
             state.userData.transactions = [
                 ...state.userData.transactions,
+                action.payload.transaction,
+            ];
+            state.userExpenses.expenses = [
+                ...state.userExpenses.expenses,
                 action.payload.transaction,
             ];
             state.userData.balance = action.payload.newBalance;

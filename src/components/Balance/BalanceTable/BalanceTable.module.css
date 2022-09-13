@@ -97,7 +97,7 @@
     text-align: center;
 }
 
-.tableBodySum {
+.tableBodySumExpenses {
     height: 40px;
     border-bottom: 2px solid #f5f6fb;
     text-align: center;
@@ -106,12 +106,25 @@
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: red;
+    color: var(--negative-sum-color);
+}
+
+.tableBodySumIncome {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--positive-sum-color);
 }
 
 .tableBodyDelete {
     height: 40px;
     border-bottom: 2px solid #f5f6fb;
+    border-right: 2px solid #f5f6fb;
     text-align: center;
 }
 
@@ -195,7 +208,12 @@
         min-width: 128px;
     }
 
-    .tableBodySum {
+    .tableBodySumExpenses {
+        min-width: 108px;
+        text-align: end;
+    }
+
+    .tableBodySumIncome {
         min-width: 108px;
         text-align: end;
     }
@@ -254,7 +272,12 @@
         width: 198px;
     }
 
-    .tableBodySum {
+    .tableBodySumExpenses {
+        width: 109px;
+        text-align: center;
+    }
+
+    .tableBodySumIncome {
         width: 109px;
         text-align: center;
     }

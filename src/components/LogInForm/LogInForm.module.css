@@ -63,15 +63,16 @@
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.04em;
+    color: var(--text-color-four);
+}
+
+.formInput:focus {
+    outline: none;
+}
+.formInput::placeholder {
     color: var(--text-color-three);
 }
-/* .formInput::placeholder {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.04em;
-    color: var(--text-color-three);
-} */
+
 .btnCont {
     margin-top: 40px;
     display: flex;
@@ -125,5 +126,9 @@
 
     .googleText {
         margin-bottom: 20px;
+    }
+
+    .formLabel {
+        font-size: 12px;
     }
 }
