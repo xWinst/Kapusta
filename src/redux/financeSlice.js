@@ -7,6 +7,8 @@ const initialState = {
     accessToken: null,
     refreshToken: null,
     sid: null,
+    loginError: null,
+    registerError: null,
     userData: {
         email: null,
         balance: null,
@@ -30,17 +32,33 @@ const financeSlice = createSlice({
     name: 'finance',
     initialState,
     extraReducers: {
+        [authOperations.register.pending](state, action) {
+            state.registerError = null;
+            state.loginError = null;
+        },
         [authOperations.register.fulfilled](state, action) {
             state.userData.email = action.payload.email;
             state.userData.id = action.payload.id;
             state.isRegistered = true;
         },
+        [authOperations.register.rejected](state, action) {
+            state.registerError = action.payload;
+        },
+
+        [authOperations.logIn.pending](state, action) {
+            state.registerError = null;
+            state.loginError = null;
+        },
+
         [authOperations.logIn.fulfilled](state, action) {
             state.userData = action.payload.userData;
             state.accessToken = action.payload.accessToken;
             state.refreshToken = action.payload.refreshToken;
             state.sid = action.payload.sid;
             state.isLoggedIn = true;
+        },
+        [authOperations.logIn.rejected](state, action) {
+            state.loginError = action.payload;
         },
         [authOperations.googleLogIn.fulfilled](state, action) {
             state.accessToken = action.payload.accessToken;

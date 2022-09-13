@@ -17,11 +17,10 @@ const logIn = createAsyncThunk(
     async (credentials, { rejectWithValue }) => {
         try {
             const { data } = await axios.post('/auth/login', credentials);
-            console.log(data); ////////
             token.set(data.accessToken);
             return data;
         } catch (error) {
-            return rejectWithValue(error);
+            return rejectWithValue(error.response.data.message);
         }
     }
 );
@@ -53,8 +52,7 @@ const register = createAsyncThunk(
             if (error.response.status === 409) {
                 dispatch(logIn(credentials));
             }
-            console.log(error);
-            return rejectWithValue(error);
+            return rejectWithValue(error.response.data.message);
         }
     }
 );

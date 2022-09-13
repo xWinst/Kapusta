@@ -51,6 +51,7 @@
 }
 
 .formInput {
+    position: relative;
     width: 100%;
     height: 52px;
     padding-left: 19px;
@@ -93,6 +94,27 @@
     padding: auto;
     color: var(--text-color-four);
     cursor: pointer;
+}
+
+.pswdVisBtn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: translate(-40px, 27px);
+    border: none;
+    background-color: transparent;
+    outline: red;
+}
+
+.pswdBtnImg {
+    border: none;
+}
+
+.errorMessage {
+    background-color: var(--accent-color);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 @media screen and (min-width: 768px) {
