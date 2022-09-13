@@ -17,3 +17,4 @@ export { default as ReportsCategories } from './ReportsCategories/ReportsCategor
 export { default as ReportsPeriod } from './ReportsPeriod/ReportsPeriod';
 export { default as ReportsTotal } from './ReportsTotal/ReportsTotal';
 export { default as GoBackArrow } from './GoBackArrow/GoBackArrow';
+export { default as PrivateRoute } from './PrivateRoute/PrivateRoute';
