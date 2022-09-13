@@ -1,4 +1,4 @@
-import useWindowDimensions from 'components/hooks/useWindowDimensions';
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 import { Navigate, Outlet } from 'react-router-dom';
 
