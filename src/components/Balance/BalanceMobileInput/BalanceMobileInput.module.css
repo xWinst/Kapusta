@@ -4,31 +4,22 @@
     align-items: center;
 }
 
-.titlePrimary {
+.titleExpenses {
     padding-top: 12px;
-    color: green;
+
     margin-bottom: 12px;
-}
-.goBackButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -30px;
-    left: -200px;
 
-    border: none;
-    background-color: transparent;
-    transition: all 250ms linear;
-
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    text-transform: uppercase;
+    color: var(--negative-sum-color);
 }
 
-.goBackButton:hover,
-.goBackButton:focus {
-    background-color: var(--zero-black-color);
+.titleIncomes {
+    padding-top: 12px;
+
+    margin-bottom: 12px;
+
+    text-transform: uppercase;
+    color: var(--positive-sum-color);
 }
 
 .formInputProductDescription {
