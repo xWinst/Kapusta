@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Kapusta/static/css/main.55690ed6.css",
-    "main.js": "/Kapusta/static/js/main.de950209.js",
+    "main.css": "/Kapusta/static/css/main.4424aeb5.css",
+    "main.js": "/Kapusta/static/js/main.b28b37bf.js",
     "static/media/sprite.svg": "/Kapusta/static/media/sprite.c9547f3469cf89990739a30a5beed708.svg",
     "static/media/bgBottomDesktop.svg": "/Kapusta/static/media/bgBottomDesktop.7d719bc3ecca6e327582.svg",
     "static/media/bgTopTablet.svg": "/Kapusta/static/media/bgTopTablet.d67fb0c23c0bc6595d41.svg",
@@ -15,8 +15,10 @@
     "static/media/union.svg": "/Kapusta/static/media/union.714abfed651ac9bb7511c49d7c27e4e9.svg",
     "static/media/calculator.svg": "/Kapusta/static/media/calculator.548cfa77d066c8000a12.svg",
     "static/media/delete.svg": "/Kapusta/static/media/delete.6810a8c2564074c62673.svg",
+    "static/media/eye-blocked.svg": "/Kapusta/static/media/eye-blocked.347a2ccf992bc6f9c76bf26e56aeaa6c.svg",
     "static/media/icons.svg": "/Kapusta/static/media/icons.c302a86abba23f6af6bb0ad003b453a9.svg",
     "index.html": "/Kapusta/index.html",
+    "static/media/eye.svg": "/Kapusta/static/media/eye.2b98a88a152dcc0cdc9bb4b6fd939b1e.svg",
     "static/media/logout-mobile.svg": "/Kapusta/static/media/logout-mobile.51fb5135cc6397ba13bbe39d96aac8f4.svg",
     "static/media/bgDesktop.svg": "/Kapusta/static/media/bgDesktop.0a899f31f56fe9101b83.svg",
     "static/media/bgMobile.svg": "/Kapusta/static/media/bgMobile.84443502bb1029840078.svg",
@@ -24,11 +26,11 @@
     "static/media/barChart.svg": "/Kapusta/static/media/barChart.f150fc456a482de8328398e0a13922e5.svg",
     "static/media/ArrowToGoBack.svg": "/Kapusta/static/media/ArrowToGoBack.17c466509198738a4cac8f3d82296e85.svg",
     "static/media/close.svg": "/Kapusta/static/media/close.1910b6c007012ffe6cd5a46baf11e3dc.svg",
-    "main.55690ed6.css.map": "/Kapusta/static/css/main.55690ed6.css.map",
-    "main.de950209.js.map": "/Kapusta/static/js/main.de950209.js.map"
+    "main.4424aeb5.css.map": "/Kapusta/static/css/main.4424aeb5.css.map",
+    "main.b28b37bf.js.map": "/Kapusta/static/js/main.b28b37bf.js.map"
   },
   "entrypoints": [
-    "static/css/main.55690ed6.css",
-    "static/js/main.de950209.js"
+    "static/css/main.4424aeb5.css",
+    "static/js/main.b28b37bf.js"
   ]
 }
