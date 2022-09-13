@@ -15,11 +15,13 @@
     justify-content: center;
 
     width: 158px;
-    height: 53px;
+    height: 48px;
 
     background-color: var(--bg-modal-two-colour);
     color: var(--zero-black-color);
-    border: 1px solid var(--zero-black-color);
+    border: 2px solid var(--white-color);
+    border-radius: 22px;
+    box-shadow: 2px 2px 5px 0px lightgrey;
 }
 
 .link:hover,

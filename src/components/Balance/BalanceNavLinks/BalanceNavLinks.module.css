@@ -42,20 +42,22 @@
 
 @media screen and (max-width: 767px) {
     .link {
-        width: 158px;
+        width: 50%;
         height: 53px;
 
         background: var(--bg-modal-two-colour);
     }
 
     .linkActive {
-        width: 158px;
+        width: 50%;
         height: 53px;
         color: var(--white-color);
         background: var(--accent-color);
     }
 
     .linkDiv {
+        width: 100%;
+        max-width: 480px;
         position: fixed;
         bottom: 0;
         transform: translateX(-50%);
