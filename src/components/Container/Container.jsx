@@ -17,16 +17,21 @@ export default function Container({ children, location }) {
         //----------------------------------------------------------------
         // При register передавать строки email и password, который не короче 8 символов.
         // Если нужно проверить register добавить цифру в email, потому что этот уже есть)))
-        // dispatch(authOperations.register({ email: 'email123456789012345@emai.ua', password: '12345678' }));
-        //----------------------------------------------------------------
-        // При logIn передавать строки email и password, который не короче 8 символов.
         // dispatch(
-        //     authOperations.logIn({
-        //         email: 'email1234567890@emai.ua',
+        //     authOperations.register({
+        //         email: 'valeravalera111@gmail.com',
         //         password: '12345678',
         //     })
         // );
         //----------------------------------------------------------------
+        // При logIn передавать строки email и password, который не короче 8 символов.
+        dispatch(
+            authOperations.logIn({
+                email: 'valeravalera111@gmail.com',
+                password: '12345678',
+            })
+        );
+        // ----------------------------------------------------------------
         // При logOut происодит сброс всего стейта, только в local storage остаются refreshToken и sid.
         // dispatch(authOperations.logOut());
         //----------------------------------------------------------------
@@ -54,7 +59,7 @@ export default function Container({ children, location }) {
             //----------------------------------------------------------------
             // При getIncome передавать ничего не нужно. Записывает в
             // state.userIncomes.incomes все транзакции по доходам, а в state.userIncomes.monthsStats суммы по месяцам.
-            dispatch(transactionOperations.getIncome());
+            // dispatch(transactionOperations.getIncome());
             //----------------------------------------------------------------
             // При addExpense в параметрах запроса "category" должно быть: 'Алкоголь', 'Образование', 'Развлечения',
             // 'Всё для дома', 'Здоровье', 'Прочее', 'Продукты', 'Спорт и хобби', 'Техника', 'Транспорт',
@@ -69,8 +74,10 @@ export default function Container({ children, location }) {
             // );
             //----------------------------------------------------------------
             // При getExpense передавать ничего не нужно. Записывает в
+
             // state.userExpenses.expenses все транзакции по доходам, а в state.userExpenses.monthsStats суммы по месяцам.
-            dispatch(transactionOperations.getExpense());
+            // dispatch(transactionOperations.getExpense());
+
             //----------------------------------------------------------------
             // При deleteTransaction передавать строку с id транзакции, записывает в state.userData.balance новый баланс.
             // Пара id для проверки '631e753adb7a810814033f25', '631e753adb7a810814033f26', '631e755bdb7a810814033f28'.
@@ -81,10 +88,11 @@ export default function Container({ children, location }) {
             // );
             //----------------------------------------------------------------
             // При getIncomeCategories передавать ничего не нужно. Записывает в state.incomeCategories массив с категориями.
-            // dispatch(transactionOperations.getIncomeCategories());
+            dispatch(transactionOperations.getIncomeCategories());
             //----------------------------------------------------------------
             // При getExpenseCategories передавать ничего не нужно. Записывает в state.expenseCategories массив с категориями.
-            // dispatch(transactionOperations.getExpenseCategories());
+            dispatch(transactionOperations.getExpenseCategories());
+
             //----------------------------------------------------------------
             // При getTransactionsByPeriod нужно передать строку в формате 'YYYY-MM'. Записывает в state.transactionsByPeriod
             // суммы расходов и доходов, а также данные по всем транзакциям.

@@ -1,20 +1,69 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { deleteTransaction } from 'redux/transaction/transactionOperations';
+import { getExpense, getIncome } from 'redux/transaction/transactionOperations';
 import s from '../BalanceTable/BalanceTable.module.css';
 
 export default function Table() {
-    const elements = (
-        <tr className={s.tableBodyTR}>
-            <td className={s.tableBodyEmpty}></td>
-            <td className={s.tableBodyDate}>05.09.2019</td>
-            <td className={s.tableBodyDescription}>
-                Metro (Lorem ipsum dolor sit...
-            </td>
-            <td className={s.tableBodyCategory}>Transport</td>
-            <td className={s.tableBodySum}>- 30.00 грн.</td>
-            <td className={s.tableBodyDelete}>
-                <button type="button" className={s.btnDelete}></button>
-            </td>
-        </tr>
+    const dispatch = useDispatch();
+    const { pathname } = useLocation();
+
+    const userExpenses = useSelector(
+        state => state.finance.userExpenses.expenses
     );
+    const userIncome = useSelector(state => state.finance.userIncomes.incomes);
+    const isLoggedIn = useSelector(state => state.finance.isLoggedIn);
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            dispatch(getExpense());
+            dispatch(getIncome());
+        }
+    }, [dispatch, isLoggedIn]);
+
+    const userExpensesElements = userExpenses?.map(
+        ({ _id, description, category, date, amount }) => {
+            return (
+                <tr key={_id} className={s.tableBodyTR}>
+                    <td className={s.tableBodyEmpty}></td>
+                    <td className={s.tableBodyDate}>{date}</td>
+                    <td className={s.tableBodyDescription}>{description}</td>
+                    <td className={s.tableBodyCategory}>{category}</td>
+                    <td className={s.tableBodySumExpenses}>- {amount} грн</td>
+                    <td className={s.tableBodyDelete}>
+                        <button
+                            onClick={() => dispatch(deleteTransaction(_id))}
+                            type="button"
+                            className={s.btnDelete}
+                        ></button>
+                    </td>
+                </tr>
+            );
+        }
+    );
+
+    const userIncomeElements = userIncome?.map(
+        ({ _id, description, category, date, amount }) => {
+            return (
+                <tr key={_id} className={s.tableBodyTR}>
+                    <td className={s.tableBodyEmpty}></td>
+                    <td className={s.tableBodyDate}>{date}</td>
+                    <td className={s.tableBodyDescription}>{description}</td>
+                    <td className={s.tableBodyCategory}>{category}</td>
+                    <td className={s.tableBodySumIncome}> {amount} грн</td>
+                    <td className={s.tableBodyDelete}>
+                        <button
+                            onClick={() => dispatch(deleteTransaction(_id))}
+                            type="button"
+                            className={s.btnDelete}
+                        ></button>
+                    </td>
+                </tr>
+            );
+        }
+    );
+
     return (
         <div className={s.scrollTable}>
             <table>
@@ -32,20 +81,8 @@ export default function Table() {
             <div className={s.scrollTableBody}>
                 <table>
                     <tbody>
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
-                        {elements}
+                        {pathname === '/expenses' && userExpensesElements}
+                        {pathname === '/income' && userIncomeElements}
                     </tbody>
                 </table>
             </div>

@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const addIncome = createAsyncThunk(
+export const addIncome = createAsyncThunk(
     'transaction/income/add',
     async (credentials, { rejectWithValue }) => {
         try {
@@ -9,6 +11,15 @@ const addIncome = createAsyncThunk(
                 '/transaction/income',
                 credentials
             );
+            toast.success('Successful add transaction!', {
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                progress: undefined,
+            });
+
             return data;
         } catch (error) {
             return rejectWithValue(error);
@@ -16,7 +27,7 @@ const addIncome = createAsyncThunk(
     }
 );
 
-const getIncome = createAsyncThunk(
+export const getIncome = createAsyncThunk(
     'transaction/income',
     async (_, { rejectWithValue }) => {
         try {
@@ -36,6 +47,14 @@ export const addExpense = createAsyncThunk(
                 '/transaction/expense',
                 credentials
             );
+            toast.success('Successful add transaction!', {
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                progress: undefined,
+            });
             return data;
         } catch (error) {
             return rejectWithValue(error);
@@ -43,7 +62,7 @@ export const addExpense = createAsyncThunk(
     }
 );
 
-const getExpense = createAsyncThunk(
+export const getExpense = createAsyncThunk(
     'transaction/expense',
     async (_, { rejectWithValue }) => {
         try {
@@ -55,13 +74,15 @@ const getExpense = createAsyncThunk(
     }
 );
 
-const deleteTransaction = createAsyncThunk(
+export const deleteTransaction = createAsyncThunk(
     'transaction',
-    async (transactionId, { rejectWithValue }) => {
+    async (transactionId, { rejectWithValue, dispatch }) => {
         try {
             const { data } = await axios.delete(
                 `/transaction/${transactionId}`
             );
+            dispatch(getExpense());
+            dispatch(getIncome());
             return data;
         } catch (error) {
             return rejectWithValue(error);
@@ -69,7 +90,7 @@ const deleteTransaction = createAsyncThunk(
     }
 );
 
-const getIncomeCategories = createAsyncThunk(
+export const getIncomeCategories = createAsyncThunk(
     'transaction/income-categories',
     async (_, { rejectWithValue }) => {
         try {
@@ -81,7 +102,7 @@ const getIncomeCategories = createAsyncThunk(
     }
 );
 
-const getExpenseCategories = createAsyncThunk(
+export const getExpenseCategories = createAsyncThunk(
     'transaction/expense-categories',
     async (_, { rejectWithValue }) => {
         try {
@@ -93,7 +114,7 @@ const getExpenseCategories = createAsyncThunk(
     }
 );
 
-const getTransactionsByPeriod = createAsyncThunk(
+export const getTransactionsByPeriod = createAsyncThunk(
     'transaction/period-data',
     async (date, { rejectWithValue }) => {
         try {
