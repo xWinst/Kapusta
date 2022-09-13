@@ -1,10 +1,15 @@
-import s from '../index.module.css';
 import { Link } from 'react-router-dom';
-import { IncomeModule } from 'modules';
-import { BalanceForm } from 'components';
 import { authSelectors } from 'redux/auth';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+
+import { IncomeModule } from 'modules';
+import { BalanceForm } from 'components';
+import { ReactComponent as ReportPic } from 'images/barChart.svg';
+
+import s from '../index.module.css';
+import style from './Income.module.css';
+
 const Income = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     if (!isLoggedIn) {
@@ -13,7 +18,10 @@ const Income = () => {
     return (
         <>
             <div className={s.container}>
-                <Link to="/reports">Reports</Link>
+                <Link to="/reports">
+                    Reports
+                    <ReportPic className={style.reportPic} alt={'reportPic'} />
+                </Link>
                 <BalanceForm />
             </div>
             <IncomeModule />
