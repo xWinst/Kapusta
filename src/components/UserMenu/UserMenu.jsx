@@ -1,10 +1,9 @@
 import LogOutLogo from '../../images/logout-mobile.svg';
 import { useSelector } from 'react-redux';
-import { authSelectors } from 'redux/auth';
 
 import s from './UserMenu.module.css';
 export default function UserMenu({ onExitBtn }) {
-    const emailFromState = useSelector(authSelectors.getUserEmail);
+    const emailFromState = useSelector(state => state.auth.userData.email);
 
     return (
         <div className={s.userMenu}>

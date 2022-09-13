@@ -1,15 +1,32 @@
 import GoogleLogo from '../../images/googleLogo.svg';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import s from './LogInForm.module.css';
 import { authOperations } from 'redux/auth';
 import { useGoogleLogin } from '@moeindana/google-oauth';
+import eyeOpened from '../../images/eye.svg';
+import eyeClosed from '../../images/eye-blocked.svg';
 
 export default function LogInForm() {
     const [formFields, setFormFields] = useState({
         email: '',
         password: '',
     });
+
+    const [isPswdShown, setIsPswdShown] = useState(false);
+
+    const changePswdVisibility = () => {
+        if (isPswdShown === false) {
+            setIsPswdShown(true);
+        }
+        if (isPswdShown === true) {
+            setIsPswdShown(false);
+        }
+    };
+
+    const errorRegisterMessage = useSelector(state => state.auth.registerError);
+    const errorLoginMessage = useSelector(state => state.auth.loginError);
+
     const dispatch = useDispatch();
 
     // const loginDisp = () => {
@@ -48,6 +65,14 @@ export default function LogInForm() {
 
     return (
         <form className={s.loginForm}>
+            {errorRegisterMessage && (
+                <p className={s.errorMessage}>Error: {errorRegisterMessage} </p>
+            )}
+
+            {errorLoginMessage && (
+                <p className={s.errorMessage}>Error: {errorLoginMessage} </p>
+            )}
+
             <p className={s.googleText}>
                 You can log in with your Google Account:
             </p>
@@ -81,7 +106,7 @@ export default function LogInForm() {
                 Password:
                 <input
                     className={s.formInput}
-                    type="password"
+                    type={isPswdShown ? 'text' : 'password'}
                     name="password"
                     value={formFields.password}
                     onChange={handleChange}
@@ -90,6 +115,17 @@ export default function LogInForm() {
                     min-length="8"
                     required
                 />
+                <button
+                    className={s.pswdVisBtn}
+                    onClick={changePswdVisibility}
+                    type="button"
+                >
+                    <img
+                        className={s.pswdBtnImg}
+                        src={isPswdShown ? eyeOpened : eyeClosed}
+                        alt="Button show/hide password"
+                    />
+                </button>
             </label>
             <div className={s.btnCont}>
                 <button onClick={onLoginHandle} className={s.formBtn}>
