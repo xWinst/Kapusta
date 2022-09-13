@@ -65,14 +65,6 @@ export default function LogInForm() {
 
     return (
         <form className={s.loginForm}>
-            {errorRegisterMessage && (
-                <p className={s.errorMessage}>Error: {errorRegisterMessage} </p>
-            )}
-
-            {errorLoginMessage && (
-                <p className={s.errorMessage}>Error: {errorLoginMessage} </p>
-            )}
-
             <p className={s.googleText}>
                 You can log in with your Google Account:
             </p>
@@ -102,6 +94,10 @@ export default function LogInForm() {
                     required
                 />
             </label>
+
+            {errorRegisterMessage && (
+                <p className={s.errorMessage}>Error: {errorRegisterMessage} </p>
+            )}
             <label className={s.formLabel}>
                 Password:
                 <input
@@ -127,6 +123,9 @@ export default function LogInForm() {
                     />
                 </button>
             </label>
+            {errorLoginMessage && (
+                <p className={s.errorMessage}>Error: {errorLoginMessage} </p>
+            )}
             <div className={s.btnCont}>
                 <button onClick={onLoginHandle} className={s.formBtn}>
                     LOG IN
