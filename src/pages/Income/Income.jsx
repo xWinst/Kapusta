@@ -18,7 +18,7 @@ const Income = () => {
     return (
         <>
             <div className={s.container}>
-                <Link to="/reports">
+                <Link to="/reports" className={style.goToReport}>
                     Reports
                     <ReportPic className={style.reportPic} alt={'reportPic'} />
                 </Link>
