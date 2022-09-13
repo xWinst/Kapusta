@@ -1,14 +1,28 @@
-import s from './DesktopChart.module.css';
+import { useEffect } from 'react';
+import s from './DesktopChart.module.css'
 import { nanoid } from '@reduxjs/toolkit';
-const DesktopChart = ({ objectForChart }) => {
+
+const DesktopChart = ({objectForChart}) => {
+
+
+
+
+
     // Преобразование обькта с обьектами в массив массивов
-    const result = Object.entries(objectForChart);
+    let result = Object.entries(objectForChart);
 
     // Удаление елемента тотал, т.к. он не нужен в графиках
     result.shift();
 
     // сортировка по убыванию
-    result.sort((a, b) => b[1] - a[1]);
+    result.sort((a,b)=>(b[1] - a[1]))
+
+    useEffect(() => {
+// eslint-disable-next-line
+      result=[]
+
+    }, [])
+
 
     const chartListContainerStyle = {
         position: 'relative',
