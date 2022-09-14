@@ -1,21 +1,14 @@
-import { nanoid } from "@reduxjs/toolkit";
+import { nanoid } from '@reduxjs/toolkit';
 
-const MobileChart = ({objectForChart}) => {
-
-
-
+const MobileChart = ({ objectForChart }) => {
     // Преобразование обькта с обьектами в массив массивов
     const result = Object.entries(objectForChart);
     // Удаление елемента тотал, т.к. он не нужен в графиках
     const totalElementOfArray = result.shift();
 
-    console.log(totalElementOfArray)
+    console.log(totalElementOfArray);
     // сортировка по убыванию
-    result.sort((a,b)=>(b[1] - a[1]))
-
-
-
-
+    result.sort((a, b) => b[1] - a[1]);
 
     const chartListContainerStyle = {
         marginRight: 'auto',
@@ -33,12 +26,10 @@ const MobileChart = ({objectForChart}) => {
         marginBottom: 2,
     };
 
-
-
     return (
         <div style={chartListContainerStyle}>
             <ul>
-                {result &&
+                {result?.length > 0 ? (
                     result.map(el => (
                         <li key={nanoid()} style={{ paddingBottom: 20 }}>
                             <div
@@ -53,16 +44,18 @@ const MobileChart = ({objectForChart}) => {
                             </div>
                             <div
                                 style={{
-                                    width:el[1] / result[0][1] *  250,
+                                    width: (el[1] / result[0][1]) * 250,
                                     height: '15px',
-                                    background:
-                                        el[1] % 3 === 1 ? '#FF751D' : '#FED9BF',
+                                    background: el[1] % 3 === 1 ? '#FF751D' : '#FED9BF',
                                     borderTopRightRadius: 10,
                                     borderBottomRightRadius: 10,
                                 }}
                             ></div>
                         </li>
-                    ))}
+                    ))
+                ) : (
+                    <li style={{ textAlign: 'center' }}>Please choose category to create chart</li>
+                )}
             </ul>
         </div>
     );

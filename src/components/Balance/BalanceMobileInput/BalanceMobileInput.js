@@ -22,9 +22,7 @@ export default function BalanceMobileInput({ title }) {
 
     const { pathname } = useLocation();
 
-    const productsExpense = useSelector(
-        state => state.finance.expenseCategories
-    );
+    const productsExpense = useSelector(state => state.finance.expenseCategories);
     const productsExpenseElemets = productsExpense?.map(el => {
         return (
             <option value={el} key={shortid()}>
@@ -43,17 +41,7 @@ export default function BalanceMobileInput({ title }) {
     });
 
     const formData = ({ description, category, date, amount }) => {
-        if (amount < 1) {
-            toast.warn('Input minimum 1 UAH!', {
-                position: 'top-center',
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-
-                draggable: true,
-                progress: undefined,
-            });
-        } else if (category === 'DEFAULT') {
+        if (category === 'DEFAULT') {
             toast.warn('Please choose category!', {
                 position: 'top-center',
                 autoClose: 2000,
@@ -119,9 +107,7 @@ export default function BalanceMobileInput({ title }) {
                 <GoBackArrow />
                 <h1
                     className={
-                        pathname === '/expenses-input-mobile'
-                            ? s.titleExpenses
-                            : s.titleIncomes
+                        pathname === '/expenses-input-mobile' ? s.titleExpenses : s.titleIncomes
                     }
                 >
                     {title}
@@ -134,7 +120,7 @@ export default function BalanceMobileInput({ title }) {
                 <input
                     required
                     onChange={handleInputChange}
-                    maxLength="24"
+                    maxLength="100"
                     className={s.formInputProductDescription}
                     type="text"
                     name="description"
@@ -153,14 +139,13 @@ export default function BalanceMobileInput({ title }) {
                         Product category
                     </option>
 
-                    {pathname === '/expenses-input-mobile' &&
-                        productsExpenseElemets}
-                    {pathname === '/incomes-input-mobile' &&
-                        productsIncomeElemets}
+                    {pathname === '/expenses-input-mobile' && productsExpenseElemets}
+                    {pathname === '/incomes-input-mobile' && productsIncomeElemets}
                 </select>
             </label>
             <label className={s.formLabelCalc}>
                 <input
+                    min={1}
                     required
                     onChange={handleInputChange}
                     className={s.formInputCalc}

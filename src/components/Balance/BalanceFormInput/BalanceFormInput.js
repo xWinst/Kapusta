@@ -42,17 +42,7 @@ export default function BalanceFormInput() {
     });
 
     const formData = ({ description, category, date, amount }) => {
-        if (amount < 1) {
-            toast.warn('Input minimum 1 UAH!', {
-                position: 'top-center',
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-
-                draggable: true,
-                progress: undefined,
-            });
-        } else if (category === 'DEFAULT') {
+        if (category === 'DEFAULT') {
             toast.warn('Please choose category!', {
                 position: 'top-center',
                 autoClose: 2000,
@@ -118,6 +108,7 @@ export default function BalanceFormInput() {
             <label className={s.formLabelProductDescription}>
                 <input
                     required
+                    maxLength="100"
                     onChange={handleInputChange}
                     className={s.formInputProductDescription}
                     type="text"
@@ -144,6 +135,7 @@ export default function BalanceFormInput() {
             <label className={s.formLabelCalc}>
                 <input
                     required
+                    min={1}
                     onChange={handleInputChange}
                     className={s.formInputCalc}
                     name="amount"

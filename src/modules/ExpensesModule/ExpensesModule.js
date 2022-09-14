@@ -6,9 +6,11 @@ import {
     BalanceTable,
     BalanceFormInput,
 } from 'components';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import s from '../ExpensesModule/ExpensesModule.module.css';
 
 export default function ExpensesModule() {
+    const { width } = useWindowDimensions();
     return (
         <>
             <AddMobileNavLink />
@@ -18,9 +20,10 @@ export default function ExpensesModule() {
                 <BalanceFormInput />
                 <div className={s.flex}>
                     <BalanceTable />
-                    <BalanceSummary />
+                    {width > 1279 && <BalanceSummary />}
                 </div>
             </div>
+            {width > 767 && width < 1280 && <BalanceSummary />}
         </>
     );
 }

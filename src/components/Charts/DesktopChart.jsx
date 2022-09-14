@@ -1,13 +1,8 @@
 import { useEffect } from 'react';
-import s from './DesktopChart.module.css'
+import s from './DesktopChart.module.css';
 import { nanoid } from '@reduxjs/toolkit';
 
-const DesktopChart = ({objectForChart}) => {
-
-
-
-
-
+const DesktopChart = ({ objectForChart }) => {
     // Преобразование обькта с обьектами в массив массивов
     let result = Object.entries(objectForChart);
 
@@ -15,14 +10,12 @@ const DesktopChart = ({objectForChart}) => {
     result.shift();
 
     // сортировка по убыванию
-    result.sort((a,b)=>(b[1] - a[1]))
+    result.sort((a, b) => b[1] - a[1]);
 
     useEffect(() => {
-// eslint-disable-next-line
-      result=[]
-
-    }, [])
-
+        // eslint-disable-next-line
+        result = [];
+    }, []);
 
     const chartListContainerStyle = {
         position: 'relative',
@@ -53,9 +46,7 @@ const DesktopChart = ({objectForChart}) => {
 
     return (
         <div style={chartListContainerStyle}>
-            <ul
-                style={{ position: 'absolute', zIndex: 1, top: 40, right: 150 }}
-            >
+            <ul style={{ position: 'absolute', zIndex: 1, top: 40, right: 150 }}>
                 <li>
                     <div style={chartDecorStyle}></div>
                 </li>
@@ -85,26 +76,23 @@ const DesktopChart = ({objectForChart}) => {
                 </li>
             </ul>
             <ul style={chartListStyle}>
-                {result
-                    ? result.map((el, index) => (
-                          <li className={s.Chart__item} key={nanoid()}>
-                              <span className={s.chartItem__text}>
-                                  {el[1]}грн
-                              </span>
-                              <div
-                                  className={s.charts__bar}
-                                  style={{
-                                      height: (el[1] / result[0][1]) * 328,
-                                      backgroundColor:
-                                          index % 3 === 0
-                                              ? '#FF751D'
-                                              : '#FFDAC0',
-                                  }}
-                              ></div>
-                              <span className={s.chartItem__text}>{el[0]}</span>
-                          </li>
-                      ))
-                    : []}
+                {result?.length > 0 ? (
+                    result.map((el, index) => (
+                        <li className={s.Chart__item} key={nanoid()}>
+                            <span className={s.chartItem__text}>{el[1]}грн</span>
+                            <div
+                                className={s.charts__bar}
+                                style={{
+                                    height: (el[1] / result[0][1]) * 328,
+                                    backgroundColor: index % 3 === 0 ? '#FF751D' : '#FFDAC0',
+                                }}
+                            ></div>
+                            <span className={s.chartItem__text}>{el[0]}</span>
+                        </li>
+                    ))
+                ) : (
+                    <li>Please choose category to create chart</li>
+                )}
             </ul>
         </div>
     );

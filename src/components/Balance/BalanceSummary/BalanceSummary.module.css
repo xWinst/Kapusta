@@ -62,16 +62,12 @@
 }
 @media screen and (min-width: 768px) {
     .list {
-        position: relative;
-        transform: translateX(-40px);
-        margin-top: 82px;
+        margin-top: 40px;
     }
 }
 
 @media screen and (min-width: 1280px) {
     .list {
         margin-top: 0px;
-        position: static;
-        transform: none;
     }
 }

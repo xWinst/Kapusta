@@ -64,7 +64,7 @@
 /* TABLE BODY */
 
 .tableBodyTR {
-    height: 40px;
+    /* height: 40px; */
 
     font-size: 12px;
     line-height: 1.17;
@@ -86,9 +86,25 @@
 }
 
 .tableBodyDescription {
+    padding: 5px 15px 5px 5px;
     height: 40px;
     border-bottom: 2px solid #f5f6fb;
     text-align: start;
+    border-bottom: 2px solid #f5f6fb;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 172px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tableBodyDescription:hover,
+.tableBodyDescription:focus {
+    cursor: pointer;
+    overflow-wrap: break-word;
+
+    height: 20px;
 }
 
 .tableBodyCategory {
@@ -150,6 +166,19 @@
     background-repeat: no-repeat;
 }
 
+.modalLogoutWrap {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    background-color: #0101017a;
+}
+
 /*  */
 /* MEDIA RULES */
 
@@ -204,7 +233,7 @@
     }
 
     .tableBodyDescription {
-        min-width: 173px;
+        width: 173px;
     }
 
     .tableBodyCategory {

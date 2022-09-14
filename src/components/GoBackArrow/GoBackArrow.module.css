@@ -4,6 +4,7 @@
     position: absolute;
     left: 20px;
     align-items: center;
+    justify-content: center;
 
     border: none;
     background-color: transparent;

@@ -14,6 +14,7 @@ import { useState } from 'react';
 import ReportsIncome from 'components/ReportsIncome/ReportsIncome';
 import { BalanceForm } from 'components';
 const Reports = () => {
+    const isRefreshingUser = useSelector(state => state.auth.isRefreshingUser);
     const [date, setDate] = useState(9);
     const [isIncome, setisIncome] = useState(true);
     const [isExpense, setIsExpense] = useState(false);
@@ -39,10 +40,13 @@ const Reports = () => {
     } else {
         period = date;
     }
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
     useEffect(() => {
-        dispatch(operation.getTransactionsByPeriod(period));
-    }, [dispatch, TotalExpense, period]);
+        if (!isRefreshingUser && !isLoggedIn) {
+            <Navigate to="/" />;
+        } else dispatch(operation.getTransactionsByPeriod(period));
+    }, [dispatch, TotalExpense, period, isRefreshingUser, isLoggedIn]);
 
     const { width } = useWindowDimensions();
     // Селектор общей суммы затрат за месяц передается пропсом в  ReportsTotal
@@ -51,11 +55,6 @@ const Reports = () => {
     const TotalIncome = useSelector(
         state => state.finance.transactionsByPeriod.incomes.incomeTotal
     );
-    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-
-    if (!isLoggedIn) {
-        return <Navigate to="/" />;
-    }
 
     const handleIncrementDate = () => {
         if (date >= 12) {

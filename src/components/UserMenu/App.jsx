@@ -3,20 +3,20 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { SharedLayout, PrivateRoute } from 'components';
-import {
-    Expenses,
-    Income,
-    Reports,
-    PageNotFound,
-    BalanceMobileInputPage,
-    Home,
-} from 'pages';
+import { lazy } from 'react';
+
+const Expenses = lazy(() => import('../../pages/Expenses/Expenses'));
+const Income = lazy(() => import('../../pages/Income/Income'));
+const Reports = lazy(() => import('../../pages/Reports/Reports'));
+const PageNotFound = lazy(() => import('../../pages/PageNotFound/PageNotFound'));
+const BalanceMobileInputPage = lazy(() =>
+    import('../../pages/BalanceMobileInputPage/BalanceMobileInputPage')
+);
+const Home = lazy(() => import('../../pages/Home/Home'));
 
 export const App = () => {
-    // console.log(process.env.CLIENT_ID);
     return (
         <>
-            {/* <Loader /> */}
             <Routes>
                 <Route path="/" element={<SharedLayout />}>
                     <Route index element={<Home />} />
@@ -25,25 +25,11 @@ export const App = () => {
                     <Route path="reports" element={<Reports />} />
 
                     <Route element={<PrivateRoute />}>
-                        <Route
-                            path="/incomes-input-mobile"
-                            element={<BalanceMobileInputPage />}
-                        />
+                        <Route path="/incomes-input-mobile" element={<BalanceMobileInputPage />} />
                     </Route>
                     <Route element={<PrivateRoute />}>
-                        <Route
-                            path="/expenses-input-mobile"
-                            element={<BalanceMobileInputPage />}
-                        />
+                        <Route path="/expenses-input-mobile" element={<BalanceMobileInputPage />} />
                     </Route>
-                    {/* <Route
-                        path="/expenses-input-mobile"
-                        element={<BalanceMobileInputPage />}
-                    /> */}
-                    {/* <Route
-                        path="/incomes-input-mobile"
-                        element={<BalanceMobileInputPage />}
-                    /> */}
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
             </Routes>
