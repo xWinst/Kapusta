@@ -1,10 +1,9 @@
 .goBackButton {
     display: flex;
-    justify-content: center;
-    align-items: center;
+
     position: absolute;
-    top: -70px;
-    left: -150px;
+    left: 20px;
+    align-items: center;
 
     border: none;
     background-color: transparent;
@@ -17,5 +16,5 @@
 
 .goBackButton:hover,
 .goBackButton:focus {
-    background-color: var(--zero-black-color);
+    background-color: grey;
 }

@@ -42,7 +42,7 @@ const BalanceForm = () => {
     const [balanceInput, setBalanceInput] = useState(addCurrency(balance));
     const [balanceBackup, setBalanceBackup] = useState(balanceInput);
 
-    const canChange = transactions?.length === 0;
+    let canChange = transactions?.length === 0;
 
     useEffect(() => {
         // setCanChange(isBalanceUnset);
