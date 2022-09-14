@@ -51,7 +51,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 <li className={s.list__item}>
                                     <a
                                         className={s.social__link}
-                                        href="https://www.linkedin.com/"
+                                        href="https://www.linkedin.com/in/%D0%BE%D0%BB%D0%B5%D0%B3-%D1%87%D1%83%D1%87%D0%B8%D0%BD"
                                         target="blank"
                                     >
                                         <LinkInIcon className={s.linkin} />
