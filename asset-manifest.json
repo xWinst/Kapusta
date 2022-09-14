@@ -1,37 +1,46 @@
 {
   "files": {
-    "main.css": "/Kapusta/static/css/main.9d356066.css",
-    "main.js": "/Kapusta/static/js/main.e28b4f7e.js",
+    "main.css": "/Kapusta/static/css/main.fd94ddbe.css",
+    "main.js": "/Kapusta/static/js/main.5791e523.js",
     "static/media/sprite.svg": "/Kapusta/static/media/sprite.c9547f3469cf89990739a30a5beed708.svg",
     "static/media/bgBottomDesktop.svg": "/Kapusta/static/media/bgBottomDesktop.7d719bc3ecca6e327582.svg",
     "static/media/bgTopTablet.svg": "/Kapusta/static/media/bgTopTablet.d67fb0c23c0bc6595d41.svg",
     "static/media/backgTopCabages.svg": "/Kapusta/static/media/backgTopCabages.63133c5768fc553df8e0.svg",
     "static/media/error404.svg": "/Kapusta/static/media/error404.af601af599a43ea2df04.svg",
+    "static/media/oleg.jpg": "/Kapusta/static/media/oleg.3a7de5aaa44f8cc45e0a.jpg",
+    "static/media/oleksandr.jpg": "/Kapusta/static/media/oleksandr.58045d67315e144bd184.jpg",
+    "static/media/viacheslav.jpg": "/Kapusta/static/media/viacheslav.2fe6dd7bd302e310566a.jpg",
+    "static/media/teamwork.png": "/Kapusta/static/media/teamwork.d44907ce2fbbf28884c3.png",
+    "static/media/volodymyr.jpg": "/Kapusta/static/media/volodymyr.c0a1f577ea5795520c4a.jpg",
+    "static/media/andriy.jpg": "/Kapusta/static/media/andriy.a3205c49a559ea9e5441.jpg",
+    "static/media/kateryna.jpg": "/Kapusta/static/media/kateryna.a90d174b83cbd902f7a6.jpg",
     "static/media/backTwoCabages.svg": "/Kapusta/static/media/backTwoCabages.6a16094068293d8d4bb0.svg",
     "static/media/backOneCabage180.svg": "/Kapusta/static/media/backOneCabage180.e27a358eaecba61dab87.svg",
     "static/media/googleLogo.svg": "/Kapusta/static/media/googleLogo.86cc61447b5be25e30195ce26a98d6ea.svg",
     "static/media/backOneCabage.svg": "/Kapusta/static/media/backOneCabage.ddd57962cba897f938cc.svg",
+    "static/media/github.svg": "/Kapusta/static/media/github.bd9c30de6ce90f4a47b71076e0d0a76b.svg",
     "static/media/logo.svg": "/Kapusta/static/media/logo.9a1219fa7b0c5ccef923ebbd77f9ee7b.svg",
     "static/media/calendarNew.svg": "/Kapusta/static/media/calendarNew.fcea09cc92ad5bc80f06cc6eef6d3cb9.svg",
     "static/media/union.svg": "/Kapusta/static/media/union.714abfed651ac9bb7511c49d7c27e4e9.svg",
     "static/media/calculator.svg": "/Kapusta/static/media/calculator.548cfa77d066c8000a12.svg",
     "static/media/delete.svg": "/Kapusta/static/media/delete.6810a8c2564074c62673.svg",
+    "static/media/close.svg": "/Kapusta/static/media/close.1910b6c007012ffe6cd5a46baf11e3dc.svg",
     "static/media/eye-blocked.svg": "/Kapusta/static/media/eye-blocked.347a2ccf992bc6f9c76bf26e56aeaa6c.svg",
     "static/media/icons.svg": "/Kapusta/static/media/icons.c302a86abba23f6af6bb0ad003b453a9.svg",
     "index.html": "/Kapusta/index.html",
     "static/media/eye.svg": "/Kapusta/static/media/eye.2b98a88a152dcc0cdc9bb4b6fd939b1e.svg",
+    "static/media/linkedin.svg": "/Kapusta/static/media/linkedin.c14e26e694b97cf8bf062ed3d7aed7d0.svg",
     "static/media/logout-mobile.svg": "/Kapusta/static/media/logout-mobile.51fb5135cc6397ba13bbe39d96aac8f4.svg",
     "static/media/bgDesktop.svg": "/Kapusta/static/media/bgDesktop.0a899f31f56fe9101b83.svg",
     "static/media/bgMobile.svg": "/Kapusta/static/media/bgMobile.84443502bb1029840078.svg",
     "static/media/bgTablet.svg": "/Kapusta/static/media/bgTablet.5829b22a4c0acc81fda5.svg",
     "static/media/barChart.svg": "/Kapusta/static/media/barChart.f150fc456a482de8328398e0a13922e5.svg",
     "static/media/ArrowToGoBack.svg": "/Kapusta/static/media/ArrowToGoBack.17c466509198738a4cac8f3d82296e85.svg",
-    "static/media/close.svg": "/Kapusta/static/media/close.1910b6c007012ffe6cd5a46baf11e3dc.svg",
-    "main.9d356066.css.map": "/Kapusta/static/css/main.9d356066.css.map",
-    "main.e28b4f7e.js.map": "/Kapusta/static/js/main.e28b4f7e.js.map"
+    "main.fd94ddbe.css.map": "/Kapusta/static/css/main.fd94ddbe.css.map",
+    "main.5791e523.js.map": "/Kapusta/static/js/main.5791e523.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d356066.css",
-    "static/js/main.e28b4f7e.js"
+    "static/css/main.fd94ddbe.css",
+    "static/js/main.5791e523.js"
   ]
 }
