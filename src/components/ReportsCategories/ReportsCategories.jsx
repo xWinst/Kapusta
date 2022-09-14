@@ -15,76 +15,122 @@ import {
     OTHER_CATEGORY,
 } from 'components/Constants/Constants';
 
-
+let isActiveProduct = false;
+let isActiveAlcohol = false;
+let isActiveEntertainment = false;
+let isActiveHealth = false;
+let isActiveTransport = false;
+let isActiveHousing = false;
+let isActiveTechnique = false;
+let isActiveCommunal = false;
+let isActiveSport = false;
+let isActiveEducation = false;
+let isActiveOther = false;
 
 const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
     const getExpenseProducts = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                PRODUCT_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[PRODUCT_CATEGORY]?.total
     );
     const getExpenseAlcohol = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                ALCOHOL_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[ALCOHOL_CATEGORY]?.total
     );
     const getExpenseEntertainment = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                ENTERTAINMENT_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[ENTERTAINMENT_CATEGORY]
+                ?.total
     );
     const getExpenseHealth = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                HEALTH_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[HEALTH_CATEGORY]?.total
     );
     const getExpenseTransport = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                TRANSPORT_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[TRANSPORT_CATEGORY]?.total
     );
     const getExpenseHousing = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                HOUSING_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[HOUSING_CATEGORY]?.total
     );
     const getExpenseTechnique = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                TECHNIQUE_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[TECHNIQUE_CATEGORY]?.total
     );
     const getExpenseCommunal = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                COMMUNAL_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[COMMUNAL_CATEGORY]?.total
     );
     const getExpenseSport = useSelector(
-        state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                SPORT_CATEGORY
-            ]?.total
+        state => state.finance.transactionsByPeriod?.expenses?.expensesData?.[SPORT_CATEGORY]?.total
     );
     const getExpenseEducation = useSelector(
         state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                EDUCATION_CATEGORY
-            ]?.total
+            state.finance.transactionsByPeriod?.expenses?.expensesData?.[EDUCATION_CATEGORY]?.total
     );
     const getExpenseOther = useSelector(
-        state =>
-            state.finance.transactionsByPeriod?.expenses?.expensesData?.[
-                OTHER_CATEGORY
-            ]?.total
+        state => state.finance.transactionsByPeriod?.expenses?.expensesData?.[OTHER_CATEGORY]?.total
     );
-   const getExpenses = useSelector(state => state.finance.transactionsByPeriod?.expenses?.expenseTotal);
+    const getExpenses = useSelector(
+        state => state.finance.transactionsByPeriod?.expenses?.expenseTotal
+    );
+
+    const resetActive = () => {
+        isActiveProduct = false;
+        isActiveAlcohol = false;
+        isActiveEntertainment = false;
+        isActiveHealth = false;
+        isActiveTransport = false;
+        isActiveHousing = false;
+        isActiveTechnique = false;
+        isActiveCommunal = false;
+        isActiveSport = false;
+        isActiveEducation = false;
+        isActiveOther = false;
+    };
+
+    const onClick = category => {
+        chooseProductChart(category);
+        resetActive();
+        switch (category) {
+            case PRODUCT_CATEGORY:
+                isActiveProduct = true;
+                break;
+            case ALCOHOL_CATEGORY:
+                isActiveAlcohol = true;
+                break;
+            case ENTERTAINMENT_CATEGORY:
+                isActiveEntertainment = true;
+                break;
+            case HEALTH_CATEGORY:
+                isActiveHealth = true;
+                break;
+            case TRANSPORT_CATEGORY:
+                isActiveTransport = true;
+                break;
+            case HOUSING_CATEGORY:
+                isActiveHousing = true;
+                break;
+            case TECHNIQUE_CATEGORY:
+                isActiveTechnique = true;
+                break;
+            case COMMUNAL_CATEGORY:
+                isActiveCommunal = true;
+                break;
+            case SPORT_CATEGORY:
+                isActiveSport = true;
+                break;
+            case EDUCATION_CATEGORY:
+                isActiveEducation = true;
+                break;
+            case OTHER_CATEGORY:
+                isActiveOther = true;
+                break;
+            default:
+        }
+        console.log('Bingo!!');
+    };
+
     return (
         <section className={s.categories}>
             <div className={s.button__group}>
@@ -100,18 +146,13 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </svg>
                 </button>
             </div>
-          {getExpenses === 0  && <h1 className= {s.expenses__title}>No expenses in this month</h1>}
+            {getExpenses === 0 && <h1 className={s.expenses__title}>No expenses in this month</h1>}
             <ul className={s.categories__list}>
                 {getExpenseProducts && (
-                    <li
-                        onClick={() => chooseProductChart(PRODUCT_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseProducts}
-                        </p>
+                    <li onClick={() => onClick(PRODUCT_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseProducts}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveProduct ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -121,15 +162,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseAlcohol && (
-                    <li
-                        onClick={() => chooseProductChart(ALCOHOL_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseAlcohol}
-                        </p>
+                    <li onClick={() => onClick(ALCOHOL_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseAlcohol}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveAlcohol ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -140,16 +176,12 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                 )}
                 {getExpenseEntertainment && (
                     <li
-                        onClick={() =>
-                            chooseProductChart(ENTERTAINMENT_CATEGORY)
-                        }
+                        onClick={() => onClick(ENTERTAINMENT_CATEGORY)}
                         className={s.categories__item}
                     >
-                        <p className={s.categories__price}>
-                            {getExpenseEntertainment}
-                        </p>
+                        <p className={s.categories__price}>{getExpenseEntertainment}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveEntertainment ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -159,15 +191,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseHealth && (
-                    <li
-                        onClick={() => chooseProductChart(HEALTH_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseHealth}
-                        </p>
+                    <li onClick={() => onClick(HEALTH_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseHealth}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveHealth ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -177,15 +204,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseTransport && (
-                    <li
-                        onClick={() => chooseProductChart(TRANSPORT_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseTransport}
-                        </p>
+                    <li onClick={() => onClick(TRANSPORT_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseTransport}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveTransport ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -195,15 +217,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseHousing && (
-                    <li
-                        onClick={() => chooseProductChart(HOUSING_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseHousing}
-                        </p>
+                    <li onClick={() => onClick(HOUSING_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseHousing}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveHousing ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -213,15 +230,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseTechnique && (
-                    <li
-                        onClick={() => chooseProductChart(TECHNIQUE_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseTechnique}
-                        </p>
+                    <li onClick={() => onClick(TECHNIQUE_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseTechnique}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveTechnique ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -231,15 +243,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseCommunal && (
-                    <li
-                        onClick={() => chooseProductChart(COMMUNAL_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseCommunal}
-                        </p>
+                    <li onClick={() => onClick(COMMUNAL_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseCommunal}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveCommunal ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -249,13 +256,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseSport && (
-                    <li
-                        onClick={() => chooseProductChart(SPORT_CATEGORY)}
-                        className={s.categories__item}
-                    >
+                    <li onClick={() => onClick(SPORT_CATEGORY)} className={s.categories__item}>
                         <p className={s.categories__price}>{getExpenseSport}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveSport ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -265,15 +269,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseEducation && (
-                    <li
-                        onClick={() => chooseProductChart(EDUCATION_CATEGORY)}
-                        className={s.categories__item}
-                    >
-                        <p className={s.categories__price}>
-                            {getExpenseEducation}
-                        </p>
+                    <li onClick={() => onClick(EDUCATION_CATEGORY)} className={s.categories__item}>
+                        <p className={s.categories__price}>{getExpenseEducation}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveEducation ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >
@@ -283,13 +282,10 @@ const ReportsCategories = ({ handleChangeRender, chooseProductChart }) => {
                     </li>
                 )}
                 {getExpenseOther && (
-                    <li
-                        onClick={() => chooseProductChart(OTHER_CATEGORY)}
-                        className={s.categories__item}
-                    >
+                    <li onClick={() => onClick(OTHER_CATEGORY)} className={s.categories__item}>
                         <p className={s.categories__price}>{getExpenseOther}</p>
                         <svg
-                            className={s.categories__icon}
+                            className={isActiveOther ? s.active : s.categories__icon}
                             width="60"
                             height="60"
                         >

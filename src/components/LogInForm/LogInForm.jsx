@@ -63,6 +63,8 @@ export default function LogInForm() {
         resetForm();
     };
 
+    // console.log(process.env.REACT_APP_CLIENT_ID);
+
     return (
         <form className={s.loginForm}>
             <p className={s.googleText}>

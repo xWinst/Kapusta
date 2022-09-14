@@ -65,26 +65,30 @@ export default function Table() {
     );
 
     return (
-        <div className={s.scrollTable}>
-            <table>
-                <thead className={s.tableHead}>
-                    <tr>
-                        <th className={s.tableTheadEmpty}></th>
-                        <th className={s.tableTheadDate}>DATE</th>
-                        <th className={s.tableTheadDescription}>DESCRIPTION</th>
-                        <th className={s.tableTheadCategory}>CATEGORY</th>
-                        <th className={s.tableTheadSum}>SUM</th>
-                        <th className={s.tableTheadDelete}></th>
-                    </tr>
-                </thead>
-            </table>
-            <div className={s.scrollTableBody}>
+        <div className={s.container}>
+            <div className={s.scrollTable}>
                 <table>
-                    <tbody>
-                        {pathname === '/expenses' && userExpensesElements}
-                        {pathname === '/income' && userIncomeElements}
-                    </tbody>
+                    <thead className={s.tableHead}>
+                        <tr>
+                            <th className={s.tableTheadEmpty}></th>
+                            <th className={s.tableTheadDate}>DATE</th>
+                            <th className={s.tableTheadDescription}>
+                                DESCRIPTION
+                            </th>
+                            <th className={s.tableTheadCategory}>CATEGORY</th>
+                            <th className={s.tableTheadSum}>SUM</th>
+                            <th className={s.tableTheadDelete}></th>
+                        </tr>
+                    </thead>
                 </table>
+                <div className={s.scrollTableBody}>
+                    <table>
+                        <tbody>
+                            {pathname === '/expenses' && userExpensesElements}
+                            {pathname === '/income' && userIncomeElements}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

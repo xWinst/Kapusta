@@ -149,7 +149,7 @@ export default function BalanceFormInput() {
                     name="amount"
                     type="number"
                     placeholder="0,00 UAH"
-                    step=".01"
+                    step="1"
                     value={amount}
                 ></input>
             </label>

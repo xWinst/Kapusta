@@ -19,6 +19,7 @@
     stroke: #52555f;
     stroke-width: 2px;
     cursor: pointer;
+    z-index: 100;
 }
 .LogOutModal__close:hover {
     stroke: #ff751d;

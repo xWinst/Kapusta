@@ -1,12 +1,22 @@
-import icons from 'images/icons.svg';
+import { ThreeCircles } from 'react-loader-spinner';
+
 import s from './Loader.module.css';
 
 const Loader = () => {
     return (
         <div className={s.container}>
-            <svg className={s.img}>
-                <use href={`${icons}#load`} />
-            </svg>
+            <ThreeCircles
+                height="250"
+                width="250"
+                color="#ff751d"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+                ariaLabel="three-circles-rotating"
+                outerCircleColor=""
+                innerCircleColor=""
+                middleCircleColor=""
+            />
         </div>
     );
 };

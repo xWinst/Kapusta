@@ -2,6 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import userOperations from '../user/userOperations';
 
 export const addIncome = createAsyncThunk(
     'transaction/income/add',
@@ -91,6 +92,7 @@ export const deleteTransaction = createAsyncThunk(
             );
             dispatch(getExpense());
             dispatch(getIncome());
+            dispatch(userOperations.getUser());
             return data;
         } catch (error) {
             return rejectWithValue(error);

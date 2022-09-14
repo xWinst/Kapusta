@@ -160,6 +160,9 @@
 }
 
 @media screen and (min-width: 768px) {
+    .container {
+        height: 384px;
+    }
     .scrollTable {
         width: 624px;
     }
@@ -220,6 +223,10 @@
 
     .tableBodyDelete {
         min-width: 83px;
+    }
+
+    .container {
+        height: 616px;
     }
 }
 

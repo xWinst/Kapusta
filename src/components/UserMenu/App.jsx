@@ -13,8 +13,10 @@ import {
 } from 'pages';
 
 export const App = () => {
+    // console.log(process.env.CLIENT_ID);
     return (
         <>
+            {/* <Loader /> */}
             <Routes>
                 <Route path="/" element={<SharedLayout />}>
                     <Route index element={<Home />} />
