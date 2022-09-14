@@ -40,8 +40,10 @@ export default function Table() {
         }
     }, [dispatch, isLoggedIn]);
 
-    const userExpensesElements = userExpenses?.map(
-        ({ _id, description, category, date, amount }) => {
+    const userExpensesElements = userExpenses
+        ?.map(x => x)
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(({ _id, description, category, date, amount }) => {
             return (
                 <tr key={_id} className={s.tableBodyTR}>
                     <td className={s.tableBodyEmpty}></td>
@@ -60,11 +62,12 @@ export default function Table() {
                     </td>
                 </tr>
             );
-        }
-    );
+        });
 
-    const userIncomeElements = userIncome?.map(
-        ({ _id, description, category, date, amount }) => {
+    const userIncomeElements = userIncome
+        ?.map(x => x)
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(({ _id, description, category, date, amount }) => {
             return (
                 <tr key={_id} className={s.tableBodyTR}>
                     <td className={s.tableBodyEmpty}></td>
@@ -83,8 +86,7 @@ export default function Table() {
                     </td>
                 </tr>
             );
-        }
-    );
+        });
 
     return (
         <>
