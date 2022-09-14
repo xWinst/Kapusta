@@ -2,12 +2,24 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 125px;
 }
 
 .mobileTableDiv {
     margin-bottom: 12px;
 }
+
+/* .title {
+    margin-bottom: -5px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+
+    letter-spacing: 0.04em;
+
+    color: var(--text-color-four);
+} */
 
 .title {
     margin-bottom: -5px;
@@ -19,6 +31,20 @@
     letter-spacing: 0.04em;
 
     color: var(--text-color-four);
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 172px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title:hover,
+.title:focus {
+    cursor: pointer;
+    overflow-wrap: break-word;
+
+    height: auto;
 }
 
 .list {
@@ -116,4 +142,17 @@
     .tableContainer {
         display: none;
     }
+}
+
+.modalLogoutWrap {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background-color: #0101017a;
 }
