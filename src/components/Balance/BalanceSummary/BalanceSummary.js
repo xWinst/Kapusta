@@ -41,9 +41,14 @@ export default function BalanceSummary() {
         if (monthsResponse.length === 0) return;
 
         const expensesMonths = monthsResponse
-            .map(i => {
-                return { month: getMonths(i), total: userExpensesStats[i] };
+            .map((element, index) => {
+                return {
+                    id: index,
+                    month: getMonths(element),
+                    total: userExpensesStats[element],
+                };
             })
+            .sort((a, b) => b.id - a.id)
             .map(i => {
                 return (
                     <li key={`${i.month}Expenses`} className={s.item}>
@@ -64,9 +69,14 @@ export default function BalanceSummary() {
         if (monthsResponse.length === 0) return;
 
         const incomeMonths = monthsResponse
-            .map(i => {
-                return { month: getMonths(i), total: userIncomeStats[i] };
+            .map((element, index) => {
+                return {
+                    id: index,
+                    month: getMonths(element),
+                    total: userIncomeStats[element],
+                };
             })
+            .sort((a, b) => b.id - a.id)
             .map(i => {
                 return (
                     <li key={`${i.month}Income`} className={s.item}>
