@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
-                    <BrowserRouter basename="/Kapusta/">
+                    <BrowserRouter>
                         <App />
                     </BrowserRouter>
                 </GoogleOAuthProvider>
