@@ -11,13 +11,9 @@ const Toast = ({ onClose }) => {
                 <button className={s.button} type={'button'} onClick={onClose}>
                     <CloseIcon className={s.icon} />
                 </button>
-                <p className={s.text}>
-                    Hello! To get started, enter the current balance of your
-                    account!
-                </p>
+                <p className={s.text}>Hello! You can enter the current balance of your account!</p>
                 <p className={s.textDown}>
-                    You can't spend money until you have it{' '}
-                    <span>&#128521;</span>
+                    You can't spend money until you have it <span>&#128521;</span>
                 </p>
             </div>
         </div>

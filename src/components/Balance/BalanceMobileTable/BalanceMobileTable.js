@@ -26,9 +26,7 @@ export default function BalanceMobileTable() {
         setIsModalOpen(false);
     };
 
-    const userExpenses = useSelector(
-        state => state.finance.userExpenses.expenses
-    );
+    const userExpenses = useSelector(state => state.finance.userExpenses.expenses);
     const userIncome = useSelector(state => state.finance.userIncomes.incomes);
     const isLoggedIn = useSelector(state => state.finance.isLoggedIn);
 
@@ -38,8 +36,10 @@ export default function BalanceMobileTable() {
             dispatch(getIncome());
         }
     }, [dispatch, isLoggedIn]);
-    const userExpensesElements = userExpenses?.map(
-        ({ _id, description, category, date, amount }) => {
+    const userExpensesElements = userExpenses
+        ?.map(x => x)
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(({ _id, description, category, date, amount }) => {
             return (
                 <div key={_id} className={s.mobileTableDiv}>
                     <h2 className={s.title}>{description}</h2>
@@ -49,9 +49,7 @@ export default function BalanceMobileTable() {
                             <p className={s.textCategory}>{category}</p>
                         </div>
                         <div className={s.divSumAndButtonFlex}>
-                            <p className={s.divSumAndButtonFlex__SumExpenses}>
-                                - {amount} грн
-                            </p>
+                            <p className={s.divSumAndButtonFlex__SumExpenses}>- {amount} грн</p>
                             <button
                                 onClick={() => {
                                     onDeleteButton(_id);
@@ -63,11 +61,12 @@ export default function BalanceMobileTable() {
                     </ul>
                 </div>
             );
-        }
-    );
+        });
 
-    const userIncomeElements = userIncome?.map(
-        ({ _id, description, category, date, amount }) => {
+    const userIncomeElements = userIncome
+        ?.map(x => x)
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(({ _id, description, category, date, amount }) => {
             return (
                 <div key={_id} className={s.mobileTableDiv}>
                     <h2 className={s.title}>{description}</h2>
@@ -77,9 +76,7 @@ export default function BalanceMobileTable() {
                             <p className={s.textCategory}>{category}</p>
                         </div>
                         <div className={s.divSumAndButtonFlex}>
-                            <p className={s.divSumAndButtonFlex__SumIncomes}>
-                                {amount} грн
-                            </p>
+                            <p className={s.divSumAndButtonFlex__SumIncomes}>{amount} грн</p>
                             <button
                                 onClick={() => {
                                     onDeleteButton(_id);
@@ -91,8 +88,7 @@ export default function BalanceMobileTable() {
                     </ul>
                 </div>
             );
-        }
-    );
+        });
 
     return (
         <>

@@ -18,10 +18,7 @@ export const ModalTeam = ({ open, handler }) => {
             {open && (
                 <div className={s.backdrop}>
                     <div className={s.team__container}>
-                        <CloseIcon
-                            className={s.close__icon}
-                            onClick={handler}
-                        />
+                        <CloseIcon className={s.close__icon} onClick={handler} />
                         <div className={s.card__wrapper}>
                             <div className={s.card}>
                                 <img
@@ -33,9 +30,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 />
                             </div>
                             <div className={s.title__container}>
-                                <h3 className={s.member__title}>
-                                    Oleg Chuchin
-                                </h3>
+                                <h3 className={s.member__title}>Oleg Chuchin</h3>
                                 <p className={s.role__text}>Team Lead</p>
                             </div>
                             <ul className={s.social__list}>
@@ -51,7 +46,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 <li className={s.list__item}>
                                     <a
                                         className={s.social__link}
-                                        href="https://www.linkedin.com/in/%D0%BE%D0%BB%D0%B5%D0%B3-%D1%87%D1%83%D1%87%D0%B8%D0%BD"
+                                        href="https://www.linkedin.com/in/%D0%BE%D0%BB%D0%B5%D0%B3-%D1%87%D1%83%D1%87%D0%B8%D0%BD/"
                                         target="blank"
                                     >
                                         <LinkInIcon className={s.linkin} />
@@ -70,9 +65,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 />
                             </div>
                             <div className={s.title__container}>
-                                <h3 className={s.member__title}>
-                                    Kateryna Zahorui
-                                </h3>
+                                <h3 className={s.member__title}>Kateryna Zahorui</h3>
                                 <p className={s.role__text}>Scrum Master</p>
                             </div>
                             <ul className={s.social__list}>
@@ -142,9 +135,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 />
                             </div>
                             <div className={s.title__container}>
-                                <h3 className={s.member__title}>
-                                    Oleksandr Zhovtyi
-                                </h3>
+                                <h3 className={s.member__title}>Oleksandr Zhovtyi</h3>
                                 <p className={s.role__text}>Developer</p>
                             </div>
                             <ul className={s.social__list}>
@@ -160,7 +151,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 <li className={s.list__item}>
                                     <a
                                         className={s.social__link}
-                                        href="https://www.linkedin.com/"
+                                        href="https://www.linkedin.com/in/александр-жовтый-131556247/"
                                         target="blank"
                                     >
                                         <LinkInIcon className={s.linkin} />
@@ -179,9 +170,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 />
                             </div>
                             <div className={s.title__container}>
-                                <h3 className={s.member__title}>
-                                    Andrii Makarov
-                                </h3>
+                                <h3 className={s.member__title}>Andrii Makarov</h3>
                                 <p className={s.role__text}>Developer</p>
                             </div>
                             <ul className={s.social__list}>
@@ -216,9 +205,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 />
                             </div>
                             <div className={s.title__container}>
-                                <h3 className={s.member__title}>
-                                    Viacheslav Ushakov
-                                </h3>
+                                <h3 className={s.member__title}>Viacheslav Ushakov</h3>
                                 <p className={s.role__text}>Developer</p>
                             </div>
                             <ul className={s.social__list}>
@@ -253,9 +240,7 @@ export const ModalTeam = ({ open, handler }) => {
                                 />
                             </div>
                             <div className={s.title__container}>
-                                <h3 className={s.member__title}>
-                                    Volodymyr Bondarenko
-                                </h3>
+                                <h3 className={s.member__title}>Volodymyr Bondarenko</h3>
                                 <p className={s.role__text}>Developer</p>
                             </div>
                             <ul className={s.social__list}>

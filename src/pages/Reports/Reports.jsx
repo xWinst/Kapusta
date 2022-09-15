@@ -43,9 +43,11 @@ const Reports = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
     useEffect(() => {
-        if (!isRefreshingUser && !isLoggedIn) {
-            <Navigate to="/" />;
-        } else dispatch(operation.getTransactionsByPeriod(period));
+        if (!isRefreshingUser) {
+            if (!isLoggedIn) {
+                <Navigate to="/" />;
+            } else dispatch(operation.getTransactionsByPeriod(period));
+        }
     }, [dispatch, TotalExpense, period, isRefreshingUser, isLoggedIn]);
 
     const { width } = useWindowDimensions();
@@ -90,6 +92,10 @@ const Reports = () => {
     const chooseIncomeChart = categoryType => {
         setSelectedIncomes(categoryType);
     };
+
+    if (!isLoggedIn) {
+        return <Navigate to="/" />;
+    }
 
     return (
         <div className={s.container}>

@@ -2,7 +2,7 @@ name: Build and deploy to GitHub Pages
 
 on:
     push:
-        branches: [dev]
+        branches: [main]
 
 jobs:
     build-and-deploy:
@@ -16,12 +16,9 @@ jobs:
                   npm install
                   npm run lint:js
                   npm run build
-              env:
-                  REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
 
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@4.1.0
               with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_KEY }}
                   branch: gh-pages
                   folder: build

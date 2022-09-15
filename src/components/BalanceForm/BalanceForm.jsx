@@ -26,12 +26,8 @@ const BalanceForm = () => {
 
     const isBalanceUnset = useMemo(() => {
         const isZeroBalance = balance === 0;
-        const areExpensesAbsent = Object.values(incomes).every(
-            value => value === 'N/A'
-        );
-        const areIncomesAbsent = Object.values(expenses).every(
-            value => value === 'N/A'
-        );
+        const areExpensesAbsent = Object.values(incomes).every(value => value === 'N/A');
+        const areIncomesAbsent = Object.values(expenses).every(value => value === 'N/A');
         return isZeroBalance && areExpensesAbsent && areIncomesAbsent;
     }, [balance, incomes, expenses]);
 
@@ -46,11 +42,11 @@ const BalanceForm = () => {
 
     useEffect(() => {
         // setCanChange(isBalanceUnset);
-        setIsToastShown(isBalanceUnset);
-    }, [isBalanceUnset]);
+        setIsToastShown(isBalanceUnset && transactions?.length === 0);
+    }, [isBalanceUnset, transactions]);
 
     useEffect(() => {
-        if (balance) {
+        if (balance !== null) {
             setBalanceInput(addCurrency(balance));
         }
     }, [balance]);
@@ -109,15 +105,10 @@ const BalanceForm = () => {
                 ) : (
                     <span className={s.Value}>{balanceInput}</span>
                 )}
-                <button
-                    type={'submit'}
-                    className={canChange ? s.ButtonEnabled : s.ButtonDisabled}
-                >
+                <button type={'submit'} className={canChange ? s.ButtonEnabled : s.ButtonDisabled}>
                     CONFIRM
                 </button>
-                {isToastShown && (
-                    <Toast onClose={() => setIsToastShown(false)} />
-                )}
+                {isToastShown && <Toast onClose={() => setIsToastShown(false)} />}
             </form>
         </div>
     );
