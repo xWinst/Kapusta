@@ -1,0 +1,39 @@
+.period {
+    text-align: center;
+}
+
+.period__text {
+    margin-bottom: 5px;
+}
+
+.period__title {
+    width: 135px;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipbutton {
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--accent-color);
+  background-color: transparent;
+  border: none;
+  scale: 1;
+  transition: scale var(--anim-props);
+}
+
+.flipbutton:hover,
+.flipbutton:focus {
+  scale: 1.2;
+}

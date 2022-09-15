@@ -1,0 +1,131 @@
+:root {
+    --text-color-one: #52555fb2;
+    --text-color-two: #eb5757;
+    --text-color-three: #a6abb9;
+    --text-color-four: #52555f;
+    --modal-nonaccent-text-color: #c7ccdc;
+    --white-color: #ffffff;
+    --accent-color: #ff751d;
+    --unaccent-color: #ffdac0;
+    --unaccent-pictogram-color: #071f41;
+    --negative-sum-color: #e7192e;
+    --positive-sum-color: #407946;
+    --inactive-tab-bg-color: #fefefe;
+    --active-tab-bg-color: #fafbfd;
+    --bg-modal-one-colour: #f2f5fc;
+    --bg-modal-two-colour: #f5f6fb;
+    --bg-modal-three-colour: #dfe2eb;
+    --form-bg-text-color: #f6f7fb;
+    --user-pictogram-bg-color: #f5f6fa;
+    --header-vertical-line-bg-color: #e0e5eb;
+    --modal-comment-bg: linear-gradient(
+        117.84deg,
+        #1d346a 2.84%,
+        #031634 67.28%
+    );
+    --anim-props: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
+}
+
+.Box {
+    display: flex;
+    font-size: 12px;
+    line-height: 14px;
+    position: relative;
+}
+
+.Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+    margin-top: 43px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: var(--text-color-one);
+}
+
+.Value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 121px;
+    height: 40px;
+
+    font-size: 12px;
+    text-align: center;
+    font-weight: 700;
+
+    border-bottom-left-radius: 22px;
+    border-top-left-radius: 22px;
+    border: 2px solid var(--white-color);
+    border-right-width: 0;
+    background-color: var(--bg-modal-two-colour);
+    box-shadow: inset 2px 2px 5px 0px lightgrey;
+}
+
+.ButtonBase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 121px;
+    height: 40px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    border-bottom-right-radius: 22px;
+    border-top-right-radius: 22px;
+}
+
+@media screen and (min-width: 768px) {
+    .Container {
+        display: flex;
+        align-items: center;
+        padding-left: 65px;
+    }
+
+    .Title {
+        margin: 0;
+        margin-right: 21px;
+    }
+
+    .Value {
+        border-right-width: 2px;
+        border-radius: 16px;
+        margin-right: 15px;
+    }
+
+    .ButtonBase {
+        border-radius: 16px;
+        border: 2px solid var(--white-color);
+    }
+}
+
+.ButtonEnabled {
+    composes: ButtonBase;
+    cursor: pointer;
+    color: var(--white-color);
+    border: 2px solid var(--accent-color);
+    background-color: var(--accent-color);
+    transition: transform var(--anim-props), box-shadow var(--anim-props);
+}
+.ButtonEnabled:hover,
+.ButtonEnabled:focus {
+    box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+
+    transform: scale(1.1);
+}
+.ButtonDisabled {
+    composes: ButtonBase;
+
+    color: var(--text-color-one);
+    border: 2px solid var(--white-color);
+    background-color: var(--bg-modal-two-colour);
+}
+
+.ButtonDisabled:hover {
+    cursor: unset;
+}

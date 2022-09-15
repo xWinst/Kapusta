@@ -1,0 +1,324 @@
+/*  */
+/* SCROLL TABLE */
+
+.scrollTable table {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.scrollTableBody {
+    height: 360px;
+    overflow-x: hidden;
+}
+
+.scrollTable ::-webkit-scrollbar {
+    width: 6px;
+    height: 130px;
+}
+.scrollTable ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.scrollTable ::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--accent-color);
+    border-radius: 5px;
+}
+
+/*  */
+/* TABLE HEAD */
+
+.tableHead {
+    height: 40px;
+    background: #f5f6fb;
+    border: none;
+}
+
+.tableTheadEmpty {
+    border-top-left-radius: 16px;
+    height: 40px;
+}
+
+.tableTheadDate {
+    height: 40px;
+    text-align: start;
+}
+
+.tableTheadDescription {
+    height: 40px;
+    text-align: start;
+}
+
+.tableTheadCategory {
+    height: 40px;
+}
+
+.tableTheadSum {
+    height: 40px;
+}
+
+.tableTheadDelete {
+    border-top-right-radius: 16px;
+}
+
+/*  */
+/* TABLE BODY */
+
+.tableBodyTR {
+    /* height: 40px; */
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--text-color-four);
+}
+
+.tableBodyEmpty {
+    height: 40px;
+
+    border-bottom: 2px solid #f5f6fb;
+    border-left: 2px solid #f5f6fb;
+}
+
+.tableBodyDate {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: start;
+}
+
+.tableBodyDescription {
+    padding: 5px 15px 5px 5px;
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: start;
+    border-bottom: 2px solid #f5f6fb;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 172px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tableBodyDescription:hover,
+.tableBodyDescription:focus {
+    cursor: pointer;
+    overflow-wrap: break-word;
+
+    height: 20px;
+}
+
+.tableBodyCategory {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
+}
+
+.tableBodySumExpenses {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--negative-sum-color);
+}
+
+.tableBodySumIncome {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--positive-sum-color);
+}
+
+.tableBodyDelete {
+    height: 40px;
+    border-bottom: 2px solid #f5f6fb;
+    border-right: 2px solid #f5f6fb;
+    text-align: center;
+}
+
+.btnDelete {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+
+    border: none;
+    background: none;
+    background-image: url(../../../images/delete.svg);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 250ms linear;
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+    background: var(--accent-color);
+    background-image: url(../../../images/delete.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modalLogoutWrap {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    background-color: #0101017a;
+}
+
+/*  */
+/* MEDIA RULES */
+
+@media screen and (max-width: 767px) {
+    .scrollTable {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        height: 384px;
+    }
+    .scrollTable {
+        width: 624px;
+    }
+
+    /* TABLE HEAD */
+    .tableTheadEmpty {
+        width: 20px;
+    }
+
+    .tableTheadDate {
+        width: 109px;
+    }
+
+    .tableTheadDescription {
+        width: 173px;
+    }
+
+    .tableTheadCategory {
+        width: 128px;
+    }
+
+    .tableTheadSum {
+        width: 108px;
+        text-align: end;
+    }
+
+    /* TABLE BODY */
+
+    .tableBodyTR {
+        width: 746px;
+    }
+
+    .tableBodyEmpty {
+        width: 20px;
+    }
+
+    .tableBodyDate {
+        width: 109px;
+    }
+
+    .tableBodyDescription {
+        width: 173px;
+    }
+
+    .tableBodyCategory {
+        min-width: 128px;
+    }
+
+    .tableBodySumExpenses {
+        min-width: 108px;
+        text-align: end;
+    }
+
+    .tableBodySumIncome {
+        min-width: 108px;
+        text-align: end;
+    }
+
+    .tableBodyDelete {
+        min-width: 83px;
+    }
+
+    .container {
+        height: 616px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .scrollTable {
+        width: 746px;
+    }
+
+    /* TABLE HEAD */
+    .tableTheadEmpty {
+        width: 28px;
+    }
+
+    .tableTheadDate {
+        width: 108px;
+    }
+
+    .tableTheadDescription {
+        width: 186px;
+    }
+
+    .tableTheadCategory {
+        width: 198px;
+    }
+
+    .tableTheadSum {
+        width: 109px;
+        text-align: center;
+    }
+
+    /* TABLE BODY */
+
+    .tableBodyTR {
+        width: 746px;
+    }
+
+    .tableBodyEmpty {
+        width: 28px;
+    }
+
+    .tableBodyDate {
+        width: 108px;
+    }
+
+    .tableBodyDescription {
+        width: 186px;
+    }
+
+    .tableBodyCategory {
+        width: 198px;
+    }
+
+    .tableBodySumExpenses {
+        width: 109px;
+        text-align: center;
+    }
+
+    .tableBodySumIncome {
+        width: 109px;
+        text-align: center;
+    }
+
+    .tableBodyDelete {
+        width: 117px;
+    }
+}

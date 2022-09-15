@@ -1,0 +1,67 @@
+.calendarWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 320px) {
+}
+.calendarWrapper > div {
+    width: auto;
+}
+
+.calendarWrapper input {
+    width: 86px;
+    background-color: transparent;
+}
+
+.calendarIcon {
+    width: 20px;
+    height: 20px;
+    color: inherit;
+}
+
+.datePicker {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    line-height: 1.67;
+    letter-spacing: 0.04em;
+    margin-left: 10px;
+    color: inherit;
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+    .calendarWrapper {
+        width: 104px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .calendarWrapper input {
+        width: 74px;
+        background-color: transparent;
+    }
+
+    .datePicker {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .calendarWrapper {
+        margin-right: 0px;
+        margin-left: 0;
+    }
+}

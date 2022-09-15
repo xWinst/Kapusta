@@ -1,0 +1,31 @@
+.back {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.back__icon {
+    scale: 1;
+    transition: scale var(--anim-props);
+}
+
+.back__icon:hover,
+.back__icon:focus {
+    scale: 1.1;
+}
+
+.back__text {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .back__icon {
+        margin-right: 15px;
+    }
+
+    .back__text {
+        display: inline-block;
+    }
+}

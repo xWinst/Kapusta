@@ -1,0 +1,63 @@
+.Toast {
+    position: absolute;
+    top: 25px;
+    right: -53px;
+    z-index: 10;
+}
+
+.rectangle {
+    width: 292px;
+    height: 152px;
+    border-radius: 30px;
+    background: var(--modal-comment-bg);
+    color: var(--white-color);
+    padding: 30px;
+    font-size: 13px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+
+    border-bottom: 14px solid #182e60;
+
+    margin-bottom: -3px;
+    margin-left: 50px;
+    position: relative;
+
+    z-index: -1;
+}
+.button {
+    position: absolute;
+    top: 38px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+}
+button.button {
+    background-color: transparent;
+    box-shadow: none;
+}
+.icon {
+    stroke: var(--bg-modal-three-colour);
+}
+.icon:hover path {
+    stroke: var(--accent-color);
+}
+.text {
+    line-height: 20px;
+}
+.textDown {
+    font-size: 11px;
+    line-height: 15px;
+}
+@media screen and (min-width: 768px) {
+    .Toast {
+        top: 32px;
+        right: -33px;
+    }
+}

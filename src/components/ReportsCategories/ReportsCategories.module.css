@@ -1,0 +1,120 @@
+.categories {
+    padding-top: 16px;
+    background-color: #fff;
+    border-radius: 30px;
+    min-height: 378px;
+}
+
+.categories__title {
+    margin: 0 10px;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+
+.categories__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.categories__item {
+    flex-basis: calc(100% / 3);
+    padding: 20px 10px;
+    text-align: center;
+
+    color: var(--text-color-four);
+
+    border-bottom: 1px solid #e0e5eb;
+    font-size: 12px;
+}
+
+.categories__price {
+    margin-bottom: 10px;
+}
+
+.categories__icon {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.categories__icon:hover,
+.categories__icon:focus {
+    --color1: var(--unaccent-color);
+    --color2: var(--accent-color);
+}
+
+.active {
+    margin-bottom: 10px;
+    --color1: var(--unaccent-color);
+    --color2: var(--accent-color);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .categories {
+        padding: 20px 40px;
+        box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    }
+
+    .categories__list {
+        grid-template-columns: repeat(6, 1fr);
+        border-bottom: none;
+    }
+    .categories__item {
+        flex-basis: calc(100% / 6);
+        border-bottom: none;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .categories {
+        padding: 20px 200px;
+    }
+}
+
+.categories__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #52555f;
+}
+
+.flipbutton {
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--accent-color);
+    background-color: transparent;
+    border: none;
+    scale: 1;
+    transition: scale var(--anim-props);
+}
+
+.flipbutton:hover,
+.flipbutton:focus {
+    scale: 1.2;
+}
+.button__group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expenses__title {
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+    line-height: 1.14;
+    text-transform: uppercase;
+}

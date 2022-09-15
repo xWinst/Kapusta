@@ -1,0 +1,13 @@
+export const  PRODUCT_CATEGORY = 'Продукты';
+export const  ALCOHOL_CATEGORY = 'Алкоголь';
+export const  ENTERTAINMENT_CATEGORY = 'Развлечения';
+export const  HEALTH_CATEGORY = 'Здоровье';
+export const  TRANSPORT_CATEGORY = 'Транспорт';
+export const  HOUSING_CATEGORY = 'Всё для дома';
+export const  TECHNIQUE_CATEGORY = 'Техника';
+export const  COMMUNAL_CATEGORY = 'Коммуналка и связь';
+export const  SPORT_CATEGORY = 'Спорт и хобби';
+export const  EDUCATION_CATEGORY = 'Образование';
+export const  OTHER_CATEGORY = 'Прочее';
+export const SALARY_CATEGORY = 'З/П';
+export const  ADDITIONAL_INCOME_CATEGORY = 'Доп. доход';

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipbutton {
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--accent-color);
+    background-color: transparent;
+    border: none;
+    scale: 1;
+    transition: scale var(--anim-props);
+}
+
+.flipbutton:hover,
+.flipbutton:focus {
+    scale: 1.2;
+}

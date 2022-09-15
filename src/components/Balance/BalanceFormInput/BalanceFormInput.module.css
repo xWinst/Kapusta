@@ -1,0 +1,151 @@
+.divFlexCalendarAndArrow {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.formLabelProductDescription {
+    margin-left: 10px;
+}
+
+.formInputProductDescription {
+    height: 44px;
+    width: 280px;
+    padding-left: 20px;
+
+    border: 2px solid var(--bg-modal-two-colour);
+    border-bottom: none;
+
+    border-radius: 16px 16px 0px 0px;
+}
+
+.formInputProductCategory {
+    height: 44px;
+    width: 280px;
+
+    padding-left: 20px;
+
+    border: 2px solid var(--bg-modal-two-colour);
+    border-radius: 0px 0px 16px 0px;
+
+    cursor: pointer;
+}
+
+.formLabelCalc {
+    margin-top: 32px;
+    margin-bottom: 80px;
+}
+
+.formInputCalc {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #000000;
+
+    height: 44px;
+
+    width: 183px;
+    padding-left: 20px;
+
+    border: 2px solid var(--bg-modal-two-colour);
+
+    border-radius: 16px;
+
+    background-image: url('../../../images/calculator.svg');
+    background-position: center right 16px;
+    background-repeat: no-repeat;
+
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.formButtonsDiv {
+    display: flex;
+}
+
+.formLabelProductDescription ::-webkit-input-placeholder {
+    color: var(--modal-nonaccent-text-color);
+}
+
+.formLabelProductDescription ::-moz-placeholder {
+    color: var(--modal-nonaccent-text-color);
+}
+
+/* MEDIA RULES */
+
+@media screen and (max-width: 767px) {
+    .form {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .goBackButton {
+        display: none;
+    }
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .formInputProductCategory {
+        width: 200px;
+        border-radius: 0px;
+    }
+
+    .formInputProductDescription {
+        width: 200px;
+        border-bottom: 2px solid var(--bg-modal-two-colour);
+        border-radius: 16px 0px 0px 0px;
+        border-right: none;
+    }
+
+    .formInputCalc {
+        width: 110px;
+        padding-left: 10px;
+        border-left: none;
+        border-radius: 0px 16px 16px 0px;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+    }
+    .formLabelCalc {
+        margin: 0;
+    }
+
+    .formButtonsDiv {
+        margin-top: 32px;
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .form {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .formButtonsDiv {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .formInputProductCategory {
+        width: 200px;
+    }
+
+    .formInputCalc {
+        margin-right: 32px;
+        width: 121px;
+        border-radius: 0px 13px 13px 0px;
+    }
+
+    .formInputProductDescription {
+        width: 290px;
+    }
+}

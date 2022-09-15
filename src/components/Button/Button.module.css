@@ -1,0 +1,36 @@
+.Button {
+    /* Геометрия */
+    width: 125px;
+    height: 44px;
+    margin-right: 15px;
+    /* Текст */
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    /* Оформление */
+    background-color: var(--bg-modal-two-colour);
+    border-radius: 16px;
+    box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
+    border: none;
+    color: var(--text-color-four);
+    cursor: pointer;
+
+    transition: transform var(--anim-props), background-color var(--anim-props),
+        box-shadow var(--anim-props), color var(--anim-props);
+}
+
+.Button:last-child {
+    margin-right: 0;
+}
+
+.Button:hover,
+.Button:focus {
+    background-color: var(--accent-color);
+    box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+    color: #ffffff;
+    transform: scale(1.1);
+}

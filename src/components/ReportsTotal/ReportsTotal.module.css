@@ -1,0 +1,58 @@
+.total {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 7px 0px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+
+    background-color: #fff;
+    box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+.total__item {
+    padding: 10px;
+    text-align: center;
+}
+
+.total__item:first-child {
+    border-right: 1px solid #e0e5eb;
+}
+
+.total__title {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--text-color-four);
+}
+
+.total__expenses {
+    color: var(--negative-sum-color);
+}
+.total__income {
+    color: var(--positive-sum-color);
+}
+
+@media screen and (min-width: 768px) {
+    .total {
+        margin-bottom: 32px;
+        padding: 7px 100px;
+        border-radius: 30px;
+    }
+    .total__item {
+        display: flex;
+        padding: 8px 20px;
+    }
+    .total__title {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .total {
+        padding: 7px 285px;
+    }
+}

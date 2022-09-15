@@ -1,0 +1,21 @@
+.goBackButton {
+    display: flex;
+
+    position: absolute;
+    left: 20px;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background-color: transparent;
+    transition: all 250ms linear;
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.goBackButton:hover,
+.goBackButton:focus {
+    background-color: grey;
+}

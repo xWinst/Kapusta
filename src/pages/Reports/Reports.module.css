@@ -1,0 +1,21 @@
+.container {
+    max-width: 100%;
+    padding: 0 32px;
+
+}
+
+.reports__nav {
+    padding: 16px 0 32px 0;
+    text-align: center;
+    color: rgba(82, 85, 95, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+    .reports__nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 32px 0;
+    }
+}
+
+

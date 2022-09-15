@@ -1,0 +1,45 @@
+.LogOutModal__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 194px;
+    background-color: #ffffff;
+    border: 1px solid #f5f6fb;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+}
+.LogOutModal__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 14px;
+    height: 14px;
+    stroke: #52555f;
+    stroke-width: 2px;
+    cursor: pointer;
+    z-index: 100;
+}
+.LogOutModal__close:hover {
+    stroke: #ff751d;
+}
+
+.LogOutModal__text {
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #52555f;
+}
+.LogOutModal__btn {
+    width: 125px;
+    height: 44px;
+    color: #52555f;
+    border: 2px solid #52555f;
+    border-radius: 16px;
+    background-color: transparent;
+}

@@ -1,0 +1,106 @@
+.divFlexCalendarAndArrow {
+    display: flex;
+    align-items: center;
+}
+
+.titleExpenses {
+    padding-top: 30px;
+    margin-bottom: 30px;
+
+    text-transform: uppercase;
+    color: var(--negative-sum-color);
+}
+
+.titleIncomes {
+    padding-top: 30px;
+    margin-bottom: 30px;
+
+    text-transform: uppercase;
+    color: var(--positive-sum-color);
+}
+
+.formInputProductDescription {
+    height: 44px;
+    width: 280px;
+    padding-left: 20px;
+
+    border: 2px solid var(--bg-modal-two-colour);
+    border-bottom: none;
+
+    border-radius: 16px 16px 0px 0px;
+}
+
+.formLabelProductDescription ::-webkit-input-placeholder {
+    color: var(--modal-nonaccent-text-color);
+}
+
+.formLabelProductDescription ::-moz-placeholder {
+    color: var(--modal-nonaccent-text-color);
+}
+
+.formInputProductCategory {
+    height: 44px;
+    width: 280px;
+
+    padding-left: 20px;
+
+    border: 2px solid var(--bg-modal-two-colour);
+    border-radius: 0px 0px 16px 0px;
+
+    color: var(--modal-nonaccent-text-color);
+}
+
+.formLabelCalc {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.formInputCalc {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.17;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #000000;
+
+    height: 44px;
+
+    width: 183px;
+    padding-left: 20px;
+
+    border: 2px solid var(--bg-modal-two-colour);
+
+    border-radius: 16px;
+
+    background-image: url('../../../images/calculator.svg');
+    background-position: center right 20px;
+    background-repeat: no-repeat;
+}
+
+.formButtonsDiv {
+    display: flex;
+}
+
+/* MEDIA RULES */
+
+@media screen and (max-width: 767px) {
+    .labelData {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .form {
+        display: none;
+    }
+}

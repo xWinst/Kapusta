@@ -1,0 +1,116 @@
+@media screen and (max-width: 479px) {
+    .containerLogedOut {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 100%;
+        min-height: 100vh;
+        padding: 56px 20px 55px 20px;
+        background-image: url('../../images/backOneCabage.svg'),
+            url('../../images/backOneCabage180.svg'),
+            url('../../images/bgMobile.svg');
+        background-size: 83px, 83px, 100%;
+        background-repeat: no-repeat;
+        background-position: bottom left 35px, top 160px right -34px, top left;
+    }
+
+    .containerLogedIn {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 100%;
+        min-height: 100vh;
+        padding: 56px 20px 55px 20px;
+        background-image: url('../../images/bgMobile.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .containerLogedOut {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 480px;
+        min-height: 100vh;
+        padding: 56px 20px 55px 20px;
+        background-image: url('../../images/backOneCabage.svg'),
+            url('../../images/backOneCabage180.svg'),
+            url('../../images/bgMobile.svg');
+        background-size: 83px, 83px, 100%;
+        background-repeat: no-repeat;
+        background-position: bottom left 35px, top 160px right -34px, top left;
+    }
+
+    .containerLogedIn {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 480px;
+        min-height: 100vh;
+        padding: 56px 20px 55px 20px;
+        background-image: url('../../images/bgMobile.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .containerLogedOut {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 768px;
+        min-height: 100vh;
+        padding: 96px 32px 60px 32px;
+        background-image: url('../../images/bgTopTablet.svg'),
+            url('../../images/backTwoCabages.svg'),
+            url('../../images/bgTablet.svg');
+        background-repeat: no-repeat;
+        background-size: 758px, 183px, 100%;
+        background-position: top 84px left 10px, bottom 56px left 103px,
+            top left;
+    }
+
+    .containerLogedIn {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 768px;
+        min-height: 100vh;
+        /* height: 1200px; */
+        padding: 96px 32px 60px 32px;
+        background-image: url('../../images/backTwoCabages.svg'),
+            url('../../images/bgTablet.svg');
+        background-repeat: no-repeat;
+        background-size: 183px, 100%;
+        background-position: bottom 56px right 88px, top left;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .containerLogedOut {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 1280px;
+        min-height: 100vh;
+        padding: 96px 91px 60px 91px;
+        background-image: url('../../images/backgTopCabages.svg'),
+            url('../../images/backTwoCabages.svg'),
+            url('../../images/bgDesktop.svg');
+        background-repeat: no-repeat;
+        background-size: 1270px, 183px, 100%;
+        background-position: top 84px left 10px, bottom 50px left 230px,
+            top left;
+    }
+
+    .containerLogedIn {
+        /* position: relative; */
+        margin: 0 auto;
+        width: 1280px;
+        min-height: 100vh;
+        padding: 96px 91px 60px 91px;
+        background-image: url('../../images/bgBottomDesktop.svg'),
+            url('../../images/bgDesktop.svg');
+        background-repeat: no-repeat;
+        background-size: 1270px, 100%;
+        background-position: bottom left 10px, top left;
+    }
+}
