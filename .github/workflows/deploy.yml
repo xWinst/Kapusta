@@ -16,8 +16,8 @@ jobs:
                   npm install
                   npm run lint:js
                   npm run build
-                  env:
-                    REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
+              env:
+                  REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
 
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@4.1.0
